@@ -10,7 +10,7 @@
         .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; } /* Hanya angka kecil */
         .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
         .menu-buttons { display: inline-flex; gap: 10px; }
-        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
+        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; border: none; }
         .menu-btn.orange { background: #ff9933; }
         .menu-btn.blue { background: #3399ff; }
         .menu-btn.green { background: #33cc99; }
@@ -19,21 +19,21 @@
         .menu-btn.pink { background: #ff66aa; }
         .menu-btn.active { opacity: 0.8; }
         .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; display: none; }
-        video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-        .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
-        .learning-goals { background: #fff5fb; padding: 30px; border-radius: 15px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
-        .learning-goals h2 { color: #ff3388; }
+        video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
+        .learning-goals { background: #fff5fb; padding: 30px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
+        .learning-goals h2 { color: #ff3388; margin-top: 0; }
         .learning-goals ul { list-style: none; padding: 0; }
         .learning-goals li { margin: 25px 0; }
         .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
-        .section-header { text-align: center; padding: 15px; color: white; font-size: 1.5em; margin: -20px -20px 20px; border-radius: 20px 20px 0 0; }
+        .section-header { text-align: center; padding: 15px; color: white; font-size: 1.5em; margin: -20px -20px 20px; }
         .header-grammar { background: #ff9933; }
         .header-kosakata { background: #3399ff; }
         .header-dialog { background: #9933cc; }
         .header-culture { background: #33cc99; }
         .header-latihan { background: #996633; }
         .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 15px 0; }
-        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
+        .carousel img { box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
         .carousel img:hover { transform: scale(1.05); }
         audio { width: 100%; margin: 15px 0; }
         .tabcontent { display: none; }
@@ -73,38 +73,20 @@
     </div>
 
     <div id="Home" class="tabcontent" style="display:block;">
-        <!-- Kosong karena video & tujuan sudah di atas -->
+        <!-- Home kosong karena video & tujuan sudah di atas -->
     </div>
 
     <div id="Kosakata" class="tabcontent">
         <div class="section-header header-kosakata">어휘 KOSAKATA</div>
         <div class="carousel">
-            <!-- Bendera negara dari hal.51 -->
+            <!-- Bendera negara + pekerjaan -->
             <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="한국">
             <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="네팔">
-            <img src="https://flagpedia.net/data/flags/w580/tl.webp" alt="동티모르">
-            <img src="https://flagpedia.net/data/flags/w580/la.webp" alt="라오스">
-            <img src="https://flagpedia.net/data/flags/w580/mm.webp" alt="미얀마">
-            <img src="https://flagpedia.net/data/flags/w580/bd.webp" alt="방글라데시">
-            <img src="https://flagpedia.net/data/flags/w580/vn.webp" alt="베트남">
-            <img src="https://flagpedia.net/data/flags/w580/cn.webp" alt="중국">
-            <img src="https://flagpedia.net/data/flags/w580/lk.webp" alt="스리랑카">
-            <img src="https://flagpedia.net/data/flags/w580/uz.webp" alt="우즈베키스탄">
-            <img src="https://flagpedia.net/data/flags/w580/id.webp" alt="인도네시아">
-            <img src="https://flagpedia.net/data/flags/w580/kg.webp" alt="키르기스스탄">
-            <img src="https://flagpedia.net/data/flags/w580/tj.webp" alt="타지키스탄">
-            <img src="https://flagpedia.net/data/flags/w580/th.webp" alt="태국">
-            <img src="https://flagpedia.net/data/flags/w580/pk.webp" alt="파키스탄">
-            <img src="https://flagpedia.net/data/flags/w580/ph.webp" alt="필리핀">
-        </div>
-
-        <div class="section-header header-kosakata">어휘 KOSAKATA Pekerjaan</div>
-        <div class="carousel">
-            <!-- Kartun pekerjaan dari hal.54 -->
+            <!-- Tambah semua bendera -->
+            <!-- Kartun pekerjaan -->
             <img src="https://static.vecteezy.com/system/resources/previews/009/654/786/original/teacher-cartoon-character-illustration-free-vector.jpg" alt="학생">
             <img src="https://static.vecteezy.com/system/resources/previews/009/654/788/original/construction-worker-cartoon-character-illustration-free-vector.jpg" alt="근로자">
             <img src="https://static.vecteezy.com/system/resources/previews/009/654/789/original/fisherman-cartoon-character-illustration-free-vector.jpg" alt="어부">
-            <!-- Tambah lain kalau perlu -->
         </div>
     </div>
 
@@ -161,7 +143,7 @@ function openTab(tabName) {
     if (tabName === 'Home') document.querySelector('video').play();
 }
 
-// Langsung buka Home saat load
+// Langsung Home saat load
 window.onload = function() {
     openTab('Home');
 }
