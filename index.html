@@ -6,13 +6,15 @@
     <title>Bab 1: 자기소개</title>
     <style>
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 40px 20px 20px; }
-        .chapter-title { font-size: 4.5em; font-weight: bold; color: white; margin: 0; }
-        .menu-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; background: #fff0f5; }
-        .menu-row { display: flex; gap: 15px; justify-content: center; width: 100%; }
-        .menu-btn { background: linear-gradient(to bottom, #ffd4b3, #ff9933); padding: 12px 20px; border-radius: 30px; font-size: 1em; color: white; text-align: center; min-width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; }
-        .menu-btn.blue { background: linear-gradient(to bottom, #b3d9ff, #3399ff); }
-        .menu-btn.green { background: linear-gradient(to bottom, #b3ffb3, #33cc33); }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 40px 20px; }
+        .chapter-title { font-size: 2.8em; font-weight: bold; color: white; margin: 0; } /* Dikurangi 50% dari sebelumnya */
+        .menu-buttons { display: flex; justify-content: center; gap: 10px; padding: 20px; background: #fff0f5; overflow-x: auto; white-space: nowrap; }
+        .menu-btn { background: #ffd4b3; padding: 10px 15px; border-radius: 30px; font-size: 0.9em; color: white; text-align: center; min-width: 120px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; flex-shrink: 0; }
+        .menu-btn.blue { background: #b3d9ff; color: #333; }
+        .menu-btn.green { background: #b3ffb3; color: #333; }
+        .menu-btn.orange { background: #ff9933; }
+        .menu-btn.purple { background: #d4b3ff; color: #333; }
+        .menu-btn.teal { background: #b3fff0; color: #333; }
         .menu-btn:hover { opacity: 0.9; }
         .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; }
         video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
@@ -22,12 +24,13 @@
         .learning-goals ul { list-style: none; padding: 0; }
         .learning-goals li { margin: 25px 0; }
         .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
+        .tabs { display: none; } /* Sementara hide karena button langsung ke tab */
         .tabcontent { display: none; padding: 20px 0; }
-        .carousel { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; }
-        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 280px; flex-shrink: 0; transition: transform 0.3s; }
-        .carousel img:hover { transform: scale(1.1); }
+        .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 15px 0; }
+        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
+        .carousel img:hover { transform: scale(1.05); }
         audio { width: 100%; margin: 15px 0; }
-        @media (max-width: 768px) { .chapter-title { font-size: 3.5em; } .menu-row { flex-direction: column; align-items: center; } .menu-btn { width: 80%; } }
+        @media (max-width: 768px) { .chapter-title { font-size: 2.2em; } .menu-buttons { gap: 8px; } .menu-btn { font-size: 0.8em; padding: 8px 12px; min-width: 100px; } }
     </style>
 </head>
 <body>
@@ -37,16 +40,12 @@
 </header>
 
 <div class="menu-buttons">
-    <div class="menu-row">
-        <div class="menu-btn" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
-        <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
-        <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
-    </div>
-    <div class="menu-row">
-        <div class="menu-btn" onclick="openTab('Home')">Home</div>
-        <div class="menu-btn blue" onclick="openTab('Dialog')">대화<br>Percakapan</div>
-        <div class="menu-btn green" onclick="openTab('Latihan')">학습 확인<br>Pastikan</div>
-    </div>
+    <div class="menu-btn orange" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
+    <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
+    <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
+    <div class="menu-btn purple" onclick="openTab('Dialog')">대화<br>Percakapan</div>
+    <div class="menu-btn teal" onclick="openTab('Latihan')">학습 확인<br>Latihan & Quiz</div>
+    <div class="menu-btn" onclick="openTab('Home')">Home</div>
 </div>
 
 <div class="video-container">
@@ -68,23 +67,19 @@
     <div id="Home" class="tabcontent" style="display:block;">
         <div class="carousel">
 
-<grok-card data-id="96e997" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="d87278" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="7be766" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="a57dad" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="e601cd" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="ce303f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="41fea8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
-
-
-
-<grok-card data-id="616880" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="c0d1bb" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
         </div>
     </div>
@@ -93,39 +88,48 @@
         <h2>어휘 Kosakata</h2>
         <div class="carousel">
 
-<grok-card data-id="164a63" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="532f0c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="eaeaf7" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="06116b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="66f80a" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="4cce80" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="6adda7" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="58233b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="eac88b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="33c5ee" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="7aeddc" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="da08b6" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="ff4b42" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="cc6ae3" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="a22f7e" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="cac93f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+        </div>
+    </div>
+
+    <div id="Grammar" class="tabcontent">
+        <h2>문법 Tata Bahasa</h2>
+        <div class="carousel">
+
+<grok-card data-id="f965a1" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="2ee91f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="31fd33" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
         </div>
     </div>
@@ -134,15 +138,15 @@
         <h2>대화 Percakapan</h2>
         <div class="carousel">
 
-<grok-card data-id="7c3970" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="db4f3d" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="0bfff8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="1ae329" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="941e5b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="8fc9d1" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
         </div>
         <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
@@ -154,19 +158,19 @@
         <h2>문화와 정보 Budaya & Informasi</h2>
         <div class="carousel">
 
-<grok-card data-id="5d347b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="5983ed" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="77c355" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="fa8caf" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="be2481" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="9e884c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="5a3e32" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="43cfb3" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
         </div>
     </div>
@@ -175,11 +179,23 @@
         <h2>학습 확인 Latihan & Quiz</h2>
         <div class="carousel">
 
-<grok-card data-id="b26d95" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="6ccd14" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
 
 
-<grok-card data-id="f44286" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+<grok-card data-id="920a7d" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="5e6d35" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="b6daa9" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="d2bcaf" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
         </div>
     </div>
