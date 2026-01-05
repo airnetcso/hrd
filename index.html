@@ -22,7 +22,8 @@
         .tablink:hover, .tablink.active { background: #ff66aa; color: white; }
         .tabcontent { display: none; padding: 20px 0; }
         .carousel { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; }
-        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 280px; flex-shrink: 0; }
+        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 280px; flex-shrink: 0; transition: transform 0.3s; }
+        .carousel img:hover { transform: scale(1.1); }
         audio { width: 100%; margin: 15px 0; }
         @media (max-width: 768px) { .chapter-title { font-size: 3em; } }
     </style>
@@ -34,8 +35,26 @@
 </header>
 
 <div class="cover-container">
-    <!-- Gambar mirip persis hal.50 textbook (hanok + orang salam + bubble dialog) -->
-    <img src="https://i.pinimg.com/originals/4e/8d/3b/4e8d3b9e4b0e4e4b8e4e4b8e4e4b8e4e.jpg" alt="Orang multicultural di hanok Korea lagi perkenalan" class="cover-img">
+    <!-- Gambar mirip persis halaman 50 textbook (grup multicultural di hanok + bubble dialog) -->
+
+<grok-card data-id="95a016" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="9badfa" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="90d1c2" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="d2e6d9" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="fa44d3" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
 </div>
 
 <div class="container">
@@ -56,15 +75,142 @@
                 <li><span class="korean">직업이 무엇인지 묻고 대답할 수 있다.</span>Mampu bertanya dan menjawab tentang pekerjaan.</li>
             </ul>
         </div>
+    </div>
 
+    <div id="Kosakata" class="tabcontent">
+        <h2>Nama Negara & Pekerjaan</h2>
         <div class="carousel">
-            <!-- Gambar pendukung tambahan -->
-            <img src="https://example.com/image1.jpg" alt="Dialog contoh">
-            <img src="https://example.com/image2.jpg" alt="Hanok">
+
+<grok-card data-id="c6f4b2" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="4ba728" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="90772f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="3bdaa8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="e57bc8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="edbe6f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="f40bad" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="117ad9" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="9c916f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="27bf17" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="fb23cb" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="6ee564" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="6d30ce" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="a02ddb" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="82633c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
     </div>
 
-    <!-- Tab lain tetap dengan gambar & audio seperti sebelumnya -->
+    <div id="Dialog" class="tabcontent">
+        <h2>Percakapan</h2>
+        <div class="carousel">
+
+<grok-card data-id="6d2ceb" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="a57b16" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="113ee0" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="234e4a" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="bd21f2" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+        </div>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3" type="audio/mpeg"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3" type="audio/mpeg"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div id="Culture" class="tabcontent">
+        <h2>한국의 인사 예절</h2>
+        <div class="carousel">
+
+<grok-card data-id="d351b8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="527fe1" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="682dac" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="e9e351" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="d907a1" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+        </div>
+    </div>
+
+    <div id="Latihan" class="tabcontent">
+        <h2>Latihan & Quiz</h2>
+        <div class="carousel">
+
+<grok-card data-id="e35a12" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="da092e" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="f47f28" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+        </div>
+    </div>
 </div>
 
 <script>
