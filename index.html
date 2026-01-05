@@ -3,96 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPS-TOPIK Digital 2024</title>
+    <title>Bab 1: 자기소개 - Perkenalan Diri</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #fff0f5; 
-            margin: 0; 
-            padding: 20px; 
-            color: #444; 
-        }
-        header { 
-            background: #ff99cc; 
-            padding: 20px; 
-            text-align: center; 
-            color: white; 
-        }
-        h1 { 
-            font-size: 1.6em; 
-            margin: 0; 
-        }
-        .bab-list { 
-            max-width: 500px; 
-            margin: 30px auto; 
-            padding: 0; 
-        }
-        .bab-item { 
-            font-size: 0.85em; /* Tulisan sangat kecil */
-            padding: 8px 0; 
-            border-bottom: 1px dotted #ddd; 
-        }
-        .bab-item a { 
-            text-decoration: none; 
-            color: #555; 
-        }
-        .bab-item a:hover { 
-            color: #ff66aa; 
-        }
-        .bab-number { 
-            font-weight: bold; 
-            color: #ff66aa; 
-        }
-        footer { 
-            text-align: center; 
-            padding: 30px; 
-            font-size: 0.8em; 
-            color: #999; 
-        }
+        body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 40px 20px; }
+        .chapter-number { font-size: 4em; font-weight: bold; color: white; margin: 0; }
+        .chapter-title-kr { font-size: 3em; font-weight: bold; color: white; margin: 5px 0; }
+        .chapter-title-id { font-size: 1.8em; color: white; opacity: 0.9; margin: 0; }
+        .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
+        .menu-buttons { display: inline-flex; gap: 10px; }
+        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
+        .menu-btn.orange { background: #ff9933; }
+        .menu-btn.blue { background: #3399ff; }
+        .menu-btn.green { background: #33cc99; }
+        .menu-btn.purple { background: #9933cc; }
+        .menu-btn.brown { background: #996633; }
+        .menu-btn.pink { background: #ff66aa; }
+        .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; display: none; }
+        video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
+        .learning-goals { background: #fff5fb; padding: 30px; border-radius: 15px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
+        .learning-goals h2 { color: #ff3388; }
+        .learning-goals ul { list-style: none; padding: 0; }
+        .learning-goals li { margin: 25px 0; }
+        .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
+        .section-header { text-align: center; padding: 15px; color: white; font-size: 1.5em; margin: -20px -20px 20px; border-radius: 20px 20px 0 0; }
+        .header-grammar { background: #ff9933; }
+        .header-kosakata { background: #3399ff; }
+        .header-dialog { background: #9933cc; }
+        .header-culture { background: #33cc99; }
+        .header-latihan { background: #996633; }
+        .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 15px 0; }
+        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
+        .carousel img:hover { transform: scale(1.05); }
+        audio { width: 100%; margin: 15px 0; }
+        .tabcontent { display: none; }
+        @media (max-width: 768px) { .chapter-number { font-size: 3em; } .chapter-title-kr { font-size: 2.5em; } .chapter-title-id { font-size: 1.5em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>EPS-TOPIK Digital 2024 • Bab 1-30</h1>
+    <div class="chapter-number">1</div>
+    <div class="chapter-title-kr">자기소개</div>
+    <div class="chapter-title-id">Perkenalan Diri</div>
 </header>
 
-<div class="bab-list">
-    <div class="bab-item"><a href="bab1.html"><span class="bab-number">BAB 1</span> 자기소개 (Perkenalan Diri)</a></div>
-    <div class="bab-item"><a href="bab2.html"><span class="bab-number">BAB 2</span> 생활용품 (Barang Kehidupan Sehari-hari)</a></div>
-    <div class="bab-item"><a href="bab3.html"><span class="bab-number">BAB 3</span> 위치와 장소 (Posisi dan Tempat)</a></div>
-    <div class="bab-item"><a href="bab4.html"><span class="bab-number">BAB 4</span> 동작과 사물 (Gerakan dan Benda)</a></div>
-    <div class="bab-item"><a href="bab5.html"><span class="bab-number">BAB 5</span> 날짜와 요일 (Tanggal dan Hari)</a></div>
-    <div class="bab-item"><a href="bab6.html"><span class="bab-number">BAB 6</span> 하루 일과 (Rutinitas Harian)</a></div>
-    <div class="bab-item"><a href="bab7.html"><span class="bab-number">BAB 7</span> 가족 (Keluarga)</a></div>
-    <div class="bab-item"><a href="bab8.html"><span class="bab-number">BAB 8</span> 음식과 식사 (Makanan dan Makan)</a></div>
-    <div class="bab-item"><a href="bab9.html"><span class="bab-number">BAB 9</span> 쇼핑 (Belanja)</a></div>
-    <div class="bab-item"><a href="bab10.html"><span class="bab-number">BAB 10</span> 교통과 이동 (Transportasi dan Perjalanan)</a></div>
-    <div class="bab-item"><a href="bab11.html"><span class="bab-number">BAB 11</span> 건강과 병원 (Kesehatan dan Rumah Sakit)</a></div>
-    <div class="bab-item"><a href="bab12.html"><span class="bab-number">BAB 12</span> 취미와 여가 (Hobi dan Waktu Luang)</a></div>
-    <div class="bab-item"><a href="bab13.html"><span class="bab-number">BAB 13</span> 날씨와 계절 (Cuaca dan Musim)</a></div>
-    <div class="bab-item"><a href="bab14.html"><span class="bab-number">BAB 14</span> 직장 생활 (Kehidupan Kerja)</a></div>
-    <div class="bab-item"><a href="bab15.html"><span class="bab-number">BAB 15</span> 전화와 연락 (Telepon dan Komunikasi)</a></div>
-    <div class="bab-item"><a href="bab16.html"><span class="bab-number">BAB 16</span> 은행과 돈 (Bank dan Uang)</a></div>
-    <div class="bab-item"><a href="bab17.html"><span class="bab-number">BAB 17</span> 집과 가구 (Rumah dan Perabot)</a></div>
-    <div class="bab-item"><a href="bab18.html"><span class="bab-number">BAB 18</span> 학교와 공부 (Sekolah dan Belajar)</a></div>
-    <div class="bab-item"><a href="bab19.html"><span class="bab-number">BAB 19</span> 여행 (Perjalanan Wisata)</a></div>
-    <div class="bab-item"><a href="bab20.html"><span class="bab-number">BAB 20</span> 한국 문화 (Budaya Korea)</a></div>
-    <div class="bab-item"><a href="bab21.html"><span class="bab-number">BAB 21</span> 시간 표현 (Ekspresi Waktu)</a></div>
-    <div class="bab-item"><a href="bab22.html"><span class="bab-number">BAB 22</span> 비교와 선택 (Perbandingan dan Pilihan)</a></div>
-    <div class="bab-item"><a href="bab23.html"><span class="bab-number">BAB 23</span> 요청과 부탁 (Permintaan dan Harapan)</a></div>
-    <div class="bab-item"><a href="bab24.html"><span class="bab-number">BAB 24</span> 감정과 상태 (Emosi dan Kondisi)</a></div>
-    <div class="bab-item"><a href="bab25.html"><span class="bab-number">BAB 25</span> 방향과 안내 (Arah dan Petunjuk)</a></div>
-    <div class="bab-item"><a href="bab26.html"><span class="bab-number">BAB 26</span> 약속과 계획 (Janji dan Rencana)</a></div>
-    <div class="bab-item"><a href="bab27.html"><span class="bab-number">BAB 27</span> 문제와 해결 (Masalah dan Solusi)</a></div>
-    <div class="bab-item"><a href="bab28.html"><span class="bab-number">BAB 28</span> 경험과 추억 (Pengalaman dan Kenangan)</a></div>
-    <div class="bab-item"><a href="bab29.html"><span class="bab-number">BAB 29</span> 소원과 희망 (Harapan dan Keinginan)</a></div>
-    <div class="bab-item"><a href="bab30.html"><span class="bab-number">BAB 30</span> 미래 계획 (Rencana Masa Depan)</a></div>
+<div class="menu-container">
+    <div class="menu-buttons">
+        <div class="menu-btn orange" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
+        <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
+        <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
+        <div class="menu-btn purple" onclick="openTab('Dialog')">대화<br>Percakapan</div>
+        <div class="menu-btn brown" onclick="openTab('Latihan')">학습 확인<br>Latihan & Quiz</div>
+        <div class="menu-btn pink" onclick="openTab('Home')">Home</div>
+    </div>
 </div>
 
-<footer>
-    EPS-TOPIK Digital • Bab 1-30
-</footer>
+<div class="video-container" id="homeVideo">
+    <video autoplay muted playsinline>
+        <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="container">
+    <div class="learning-goals" id="learningGoals">
+        <h2>학습 목표<br>Tujuan Pembelajaran</h2>
+        <ul>
+            <li><span class="korean">어느 나라 사람인지 묻고 대답할 수 있다.</span>Mampu bertanya dan menjawab tentang asal negara seseorang.</li>
+            <li><span class="korean">직업이 무엇인지 묻고 대답할 수 있다.</span>Mampu bertanya dan menjawab tentang pekerjaan seseorang.</li>
+        </ul>
+    </div>
+
+    <div id="Home" class="tabcontent" style="display:block;">
+        <!-- Home kosong karena video & tujuan sudah di atas -->
+    </div>
+
+    <div id="Kosakata" class="tabcontent">
+        <div class="section-header header-kosakata">어휘 KOSAKATA</div>
+        <div class="carousel">
+            <!-- Pekerjaan kartun -->
+            <img src="https://example.com/job1.jpg" alt="Guru">
+            <img src="https://example.com/job2.jpg" alt="근로자">
+        </div>
+    </div>
+
+    <div id="Grammar" class="tabcontent">
+        <div class="section-header header-grammar">문법 TATA BAHASA</div>
+        <div class="carousel">
+        </div>
+    </div>
+
+    <div id="Dialog" class="tabcontent">
+        <div class="section-header header-dialog">대화 PERCAKAPAN</div>
+        <div class="carousel">
+        </div>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3"></audio>
+    </div>
+
+    <div id="Culture" class="tabcontent">
+        <div class="section-header header-culture">문화와 정보 BUDAYA & INFORMASI</div>
+        <div class="carousel">
+        </div>
+    </div>
+
+    <div id="Latihan" class="tabcontent">
+        <div class="section-header header-latihan">학습 확인 LATIHAN & QUIZ</div>
+        <div class="carousel">
+        </div>
+    </div>
+</div>
+
+<script>
+function openTab(tabName) {
+    document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
+    document.getElementById(tabName).style.display = 'block';
+    
+    document.getElementById('homeVideo').style.display = (tabName === 'Home') ? 'block' : 'none';
+    document.getElementById('learningGoals').style.display = (tabName === 'Home') ? 'block' : 'none';
+    
+    if (tabName === 'Home') document.querySelector('video').play();
+}
+</script>
 
 </body>
 </html>
