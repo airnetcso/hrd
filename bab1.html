@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bab 1: 자기소개</title>
+    <title>Bab 1</title>
     <style>
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 20px 20px 10px; }
-        .chapter-number { font-size: 2em; font-weight: bold; color: white; margin: 0; } /* Sangat kecil */
-        .chapter-title-kr { font-size: 1.8em; font-weight: bold; color: white; margin: 5px 0; } /* Kecil 1 baris utama */
-        .chapter-title-id { font-size: 1em; color: white; opacity: 0.9; margin: 0; }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); padding: 15px 20px; display: flex; align-items: center; }
+        .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; } /* Sangat kecil, hanya angka */
         .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
         .menu-buttons { display: inline-flex; gap: 10px; }
         .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
@@ -23,7 +21,7 @@
         video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
         .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
         .learning-goals { background: #fff5fb; padding: 30px; border-radius: 15px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
-        .learning-goals h2 { color: #ff3388; }
+        .learning-goals h2 { color: #ff3388; margin-top: 0; }
         .learning-goals ul { list-style: none; padding: 0; }
         .learning-goals li { margin: 25px 0; }
         .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
@@ -38,15 +36,13 @@
         .carousel img:hover { transform: scale(1.05); }
         audio { width: 100%; margin: 15px 0; }
         .tabcontent { display: none; }
-        @media (max-width: 768px) { .chapter-number { font-size: 1.8em; } .chapter-title-kr { font-size: 1.6em; } .chapter-title-id { font-size: 0.9em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
+        @media (max-width: 768px) { .chapter-number { font-size: 1.6em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
     </style>
 </head>
 <body>
 
 <header>
     <div class="chapter-number">1</div>
-    <div class="chapter-title-kr">자기소개</div>
-    <div class="chapter-title-id">Perkenalan Diri</div>
 </header>
 
 <div class="menu-container">
@@ -76,11 +72,83 @@
     </div>
 
     <div id="Home" class="tabcontent" style="display:block;">
-        <!-- Kosong karena video & tujuan sudah di atas -->
+        <!-- Home kosong karena video & tujuan sudah di atas -->
     </div>
 
-    <!-- Tab Kosakata, Grammar, Dialog, Culture, Latihan dengan header warna + carousel gambar -->
-    <!-- Konten lengkap mirip screenshot textbook lo -->
+    <div id="Kosakata" class="tabcontent">
+        <div class="section-header header-kosakata">어휘 KOSAKATA 1 나라 이름 Nama Negara</div>
+        <div class="carousel">
+            <!-- Bendera negara dari hal.51 -->
+            <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="한국 Korea Selatan">
+            <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="네팔 Nepal">
+            <img src="https://flagpedia.net/data/flags/w580/tl.webp" alt="동티모르 Timor Leste">
+            <img src="https://flagpedia.net/data/flags/w580/la.webp" alt="라오스 Laos">
+            <img src="https://flagpedia.net/data/flags/w580/mm.webp" alt="미얀마 Myanmar">
+            <img src="https://flagpedia.net/data/flags/w580/bd.webp" alt="방글라데시 Bangladesh">
+            <img src="https://flagpedia.net/data/flags/w580/vn.webp" alt="베트남 Vietnam">
+            <img src="https://flagpedia.net/data/flags/w580/cn.webp" alt="중국 China">
+            <img src="https://flagpedia.net/data/flags/w580/lk.webp" alt="스리랑카 Sri Lanka">
+            <img src="https://flagpedia.net/data/flags/w580/uz.webp" alt="우즈베키스탄 Uzbekistan">
+            <img src="https://flagpedia.net/data/flags/w580/id.webp" alt="인도네시아 Indonesia">
+            <img src="https://flagpedia.net/data/flags/w580/kg.webp" alt="키르기스스탄 Kyrgyzstan">
+            <img src="https://flagpedia.net/data/flags/w580/tj.webp" alt="타지키스탄 Tajikistan">
+            <img src="https://flagpedia.net/data/flags/w580/th.webp" alt="태국 Thailand">
+            <img src="https://flagpedia.net/data/flags/w580/pk.webp" alt="파키스탄 Pakistan">
+            <img src="https://flagpedia.net/data/flags/w580/ph.webp" alt="필리핀 Philippines">
+        </div>
+
+        <div class="section-header header-kosakata">어휘 KOSAKATA 2 직업명 Pekerjaan</div>
+        <div class="carousel">
+            <!-- Kartun pekerjaan dari hal.54 -->
+            <img src="https://static.vecteezy.com/system/resources/previews/009/654/786/original/teacher-cartoon-character-illustration-free-vector.jpg" alt="학생 pelajar">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/654/788/original/construction-worker-cartoon-character-illustration-free-vector.jpg" alt="근로자 pekerja">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/654/789/original/fisherman-cartoon-character-illustration-free-vector.jpg" alt="어부 nelayan">
+            <!-- Tambah lain kalau perlu -->
+        </div>
+    </div>
+
+    <div id="Grammar" class="tabcontent">
+        <div class="section-header header-grammar">문법 TATA BAHASA 1 입니다, 입니까?</div>
+        <div class="carousel">
+            <!-- Ilustrasi grammar -->
+            <img src="https://example.com/imdnida-example.jpg" alt="입니다 입니까 contoh">
+        </div>
+
+        <div class="section-header header-grammar">문법 TATA BAHASA 2 은/는</div>
+        <div class="carousel">
+            <img src="https://example.com/eunneun-table.jpg" alt="은는 aturan">
+        </div>
+    </div>
+
+    <div id="Dialog" class="tabcontent">
+        <div class="section-header header-dialog">대화 PERCAKAPAN</div>
+        <div class="carousel">
+            <!-- Foto cafe dialog -->
+            <img src="https://example.com/cafe-percakapan1.jpg" alt="Percakapan 1">
+            <img src="https://example.com/cafe-percakapan2.jpg" alt="Percakapan 2">
+        </div>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3"></audio>
+    </div>
+
+    <div id="Culture" class="tabcontent">
+        <div class="section-header header-culture">문화와 정보 BUDAYA & INFORMASI</div>
+        <div class="carousel">
+            <!-- Ilustrasi salam -->
+            <img src="https://example.com/bow-deep.jpg" alt="Bow dalam">
+            <img src="https://example.com/wave-casual.jpg" alt="Wave santai">
+            <img src="https://example.com/handshake-support.jpg" alt="Handshake dukung lengan">
+        </div>
+    </div>
+
+    <div id="Latihan" class="tabcontent">
+        <div class="section-header header-latihan">학습 확인 LATIHAN & QUIZ</div>
+        <div class="carousel">
+            <!-- Reading ARC + listening -->
+            <img src="https://example.com/arc-vietnam.jpg" alt="ARC Vietnam">
+        </div>
+    </div>
 </div>
 
 <script>
@@ -96,10 +164,13 @@ function openTab(tabName) {
     if (tabName === 'Home') document.querySelector('video').play();
 }
 
-// Langsung Home saat load
+// Langsung Home saat load atau dari #Home
 window.onload = function() {
-    openTab('Home');
-    document.querySelector('.menu-btn.pink').classList.add('active');
+    const hash = window.location.hash.substring(1) || 'Home';
+    openTab(hash);
+    document.querySelectorAll('.menu-btn').forEach(b => {
+        if (b.getAttribute('onclick') === `openTab('${hash}')`) b.classList.add('active');
+    });
 }
 </script>
 
