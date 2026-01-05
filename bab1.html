@@ -72,11 +72,10 @@ video {
 </div>
 </div>
 
-<!-- VIDEO AUTOPLAY (MUTED AWAL) -->
+<!-- VIDEO AUTOPLAY + SUARA -->
 <div class="video-container" id="homeVideo">
     <video id="introVideo"
            autoplay
-           muted
            playsinline
            preload="auto">
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
@@ -101,8 +100,6 @@ video {
 </div>
 
 <script>
-let soundUnlocked = false;
-
 function openTab(tab, btn){
     document.querySelectorAll('.tabcontent').forEach(t=>t.style.display='none');
     document.querySelectorAll('.menu-btn').forEach(b=>b.classList.remove('active'));
@@ -113,23 +110,7 @@ function openTab(tab, btn){
     const home = (tab === 'Home');
     document.getElementById('homeVideo').style.display = home ? 'block' : 'none';
     document.getElementById('learningGoals').style.display = home ? 'block' : 'none';
-
-    if(home) tryUnlockSound();
 }
-
-// 🔓 buka suara setelah interaksi user
-function tryUnlockSound(){
-    if(soundUnlocked) return;
-    const v = document.getElementById('introVideo');
-    v.muted = false;
-    v.volume = 1.0;
-    v.play().catch(()=>{});
-    soundUnlocked = true;
-}
-
-// klik di mana saja = izin suara
-document.addEventListener('click', tryUnlockSound, { once:true });
-document.addEventListener('touchstart', tryUnlockSound, { once:true });
 
 window.onload = function(){
     const tab = location.hash.replace('#','') || 'Home';
