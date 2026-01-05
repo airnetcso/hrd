@@ -6,25 +6,28 @@
     <title>Bab 1: 자기소개</title>
     <style>
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 50px 20px 30px; }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 40px 20px 20px; }
         .chapter-title { font-size: 4.5em; font-weight: bold; color: white; margin: 0; }
-        .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; background: #fff0f5; }
+        .menu-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; background: #fff0f5; }
+        .menu-row { display: flex; gap: 15px; justify-content: center; width: 100%; }
+        .menu-btn { background: linear-gradient(to bottom, #ffd4b3, #ff9933); padding: 12px 20px; border-radius: 30px; font-size: 1em; color: white; text-align: center; min-width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; }
+        .menu-btn.blue { background: linear-gradient(to bottom, #b3d9ff, #3399ff); }
+        .menu-btn.green { background: linear-gradient(to bottom, #b3ffb3, #33cc33); }
+        .menu-btn:hover { opacity: 0.9; }
+        .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; }
         video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
         .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
         .learning-goals { background: #fff5fb; padding: 30px; border-radius: 15px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; }
-        .learning-goals h2 { color: #ff3388; margin-top: 0; }
+        .learning-goals h2 { color: #ff3388; }
         .learning-goals ul { list-style: none; padding: 0; }
         .learning-goals li { margin: 25px 0; }
         .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
-        .tabs { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 30px; }
-        .tablink { background: #ffd4e6; padding: 15px 25px; text-align: center; border: none; cursor: pointer; font-size: 1.1em; border-radius: 30px; min-width: 150px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .tablink:hover, .tablink.active { background: #ff66aa; color: white; }
         .tabcontent { display: none; padding: 20px 0; }
         .carousel { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; }
         .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 280px; flex-shrink: 0; transition: transform 0.3s; }
         .carousel img:hover { transform: scale(1.1); }
         audio { width: 100%; margin: 15px 0; }
-        @media (max-width: 768px) { .chapter-title { font-size: 3.5em; } .tabs { flex-direction: column; align-items: center; } .tablink { width: 80%; } }
+        @media (max-width: 768px) { .chapter-title { font-size: 3.5em; } .menu-row { flex-direction: column; align-items: center; } .menu-btn { width: 80%; } }
     </style>
 </head>
 <body>
@@ -33,10 +36,23 @@
     <div class="chapter-title">자기소개</div>
 </header>
 
+<div class="menu-buttons">
+    <div class="menu-row">
+        <div class="menu-btn" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
+        <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
+        <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
+    </div>
+    <div class="menu-row">
+        <div class="menu-btn" onclick="openTab('Home')">Home</div>
+        <div class="menu-btn blue" onclick="openTab('Dialog')">대화<br>Percakapan</div>
+        <div class="menu-btn green" onclick="openTab('Latihan')">학습 확인<br>Pastikan</div>
+    </div>
+</div>
+
 <div class="video-container">
     <video autoplay muted playsinline>
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
-        Video tidak support. Coba download manual.
+        Video tidak support.
     </video>
 </div>
 
@@ -49,42 +65,85 @@
         </ul>
     </div>
 
-    <div class="tabs">
-        <button class="tablink active" onclick="openTab('Home')">Home</button>
-        <button class="tablink" onclick="openTab('Kosakata')">Kosakata</button>
-        <button class="tablink" onclick="openTab('Grammar')">Tata Bahasa</button>
-        <button class="tablink" onclick="openTab('Dialog')">Percakapan</button>
-        <button class="tablink" onclick="openTab('Culture')">Budaya & Informasi</button>
-        <button class="tablink" onclick="openTab('Latihan')">Latihan & Quiz</button>
-    </div>
-
     <div id="Home" class="tabcontent" style="display:block;">
-        <!-- Tambahan carousel pendukung kalau mau -->
         <div class="carousel">
-            <!-- Gambar hanok multicultural -->
-            <img src="https://www.korea.net/upload/content/editImage/foreigners-hanbok-bukchon.jpg" alt="Grup di hanok">
-            <img src="https://english.visitkorea.or.kr/cms/resource_etc/99/2941399_image2_1.jpg" alt="Bukchon hanok">
+
+<grok-card data-id="96e997" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="7be766" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="e601cd" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="41fea8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="616880" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
     </div>
 
     <div id="Kosakata" class="tabcontent">
-        <h2>Kosakata</h2>
+        <h2>어휘 Kosakata</h2>
         <div class="carousel">
-            <!-- Bendera negara dari hal.51 -->
-            <img src="https://flagpedia.net/data/flags/w1200/kr.webp" alt="Korea">
-            <img src="https://flagpedia.net/data/flags/w1200/np.webp" alt="Nepal">
-            <img src="https://flagpedia.net/data/flags/w1200/tl.webp" alt="Timor Leste">
-            <!-- Kartun pekerjaan dari hal.54 -->
-            <img src="https://graphicmama.com/images/cartoon-teacher-korean.jpg" alt="Guru">
-            <img src="https://graphicmama.com/images/cartoon-worker.jpg" alt="근로자">
+
+<grok-card data-id="164a63" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="eaeaf7" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="66f80a" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="6adda7" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="eac88b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="7aeddc" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="ff4b42" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="a22f7e" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="2ee91f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
     </div>
 
     <div id="Dialog" class="tabcontent">
-        <h2>Percakapan</h2>
+        <h2>대화 Percakapan</h2>
         <div class="carousel">
-            <!-- Ilustrasi cafe dari hal.53 & 56 -->
-            <img src="https://www.cafe-illustration.com/people-talking-cafe.jpg" alt="Cafe dialog">
+
+<grok-card data-id="7c3970" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="0bfff8" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="941e5b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
         <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
         <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
@@ -92,19 +151,36 @@
     </div>
 
     <div id="Culture" class="tabcontent">
-        <h2>Budaya & Informasi</h2>
+        <h2>문화와 정보 Budaya & Informasi</h2>
         <div class="carousel">
-            <!-- Ilustrasi salam dari hal.57 -->
-            <img src="https://www.korean-culture.com/bow-greeting.jpg" alt="Bow">
-            <img src="https://www.korean-culture.com/handshake.jpg" alt="Handshake">
+
+<grok-card data-id="5d347b" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="77c355" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="be2481" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="5a3e32" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
     </div>
 
     <div id="Latihan" class="tabcontent">
-        <h2>Latihan & Quiz</h2>
+        <h2>학습 확인 Latihan & Quiz</h2>
         <div class="carousel">
-            <!-- Contoh ARC dari hal.58 -->
-            <img src="https://www.example-arc.com/vietnam-card.jpg" alt="ARC Vietnam">
+
+<grok-card data-id="b26d95" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+
+<grok-card data-id="f44286" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
         </div>
     </div>
 </div>
@@ -112,9 +188,7 @@
 <script>
 function openTab(tabName) {
     document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
-    document.querySelectorAll('.tablink').forEach(l => l.classList.remove('active'));
     document.getElementById(tabName).style.display = 'block';
-    event.currentTarget.classList.add('active');
 }
 </script>
 
