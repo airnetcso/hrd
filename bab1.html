@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bab 1: 자기소개</title>
+    <title>Bab 1: 자기소개 - Perkenalan Diri</title>
     <style>
-        /* Style sama seperti sebelumnya yang udah OK */
-        /* Gue taruh lengkap biar langsung jalan */
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
         header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 40px 20px; }
-        .chapter-title { font-size: 3em; font-weight: bold; color: white; margin: 0; }
-        .menu-container { background: #fff0f5; padding: 20px 10px; overflow-x: auto; white-space: nowrap; }
-        .menu-buttons { display: inline-flex; gap: 12px; }
+        .chapter-number { font-size: 4em; font-weight: bold; color: white; margin: 0; }
+        .chapter-title-kr { font-size: 3em; font-weight: bold; color: white; margin: 5px 0; }
+        .chapter-title-id { font-size: 1.8em; color: white; opacity: 0.9; margin: 0; }
+        .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
+        .menu-buttons { display: inline-flex; gap: 10px; }
         .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
         .menu-btn.orange { background: #ff9933; }
         .menu-btn.blue { background: #3399ff; }
@@ -23,22 +23,30 @@
         video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
         .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
         .learning-goals { background: #fff5fb; padding: 30px; border-radius: 15px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
+        .learning-goals h2 { color: #ff3388; }
+        .learning-goals ul { list-style: none; padding: 0; }
+        .learning-goals li { margin: 25px 0; }
+        .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
         .section-header { text-align: center; padding: 15px; color: white; font-size: 1.5em; margin: -20px -20px 20px; border-radius: 20px 20px 0 0; }
         .header-grammar { background: #ff9933; }
         .header-kosakata { background: #3399ff; }
         .header-dialog { background: #9933cc; }
         .header-culture { background: #33cc99; }
         .header-latihan { background: #996633; }
-        .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 15px 0; }
-        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; }
+        .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 15px 0; }
+        .carousel img { border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
+        .carousel img:hover { transform: scale(1.05); }
         audio { width: 100%; margin: 15px 0; }
         .tabcontent { display: none; }
+        @media (max-width: 768px) { .chapter-number { font-size: 3em; } .chapter-title-kr { font-size: 2.5em; } .chapter-title-id { font-size: 1.5em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="chapter-title">자기소개</div>
+    <div class="chapter-number">1</div>
+    <div class="chapter-title-kr">자기소개</div>
+    <div class="chapter-title-id">Perkenalan Diri</div>
 </header>
 
 <div class="menu-container">
@@ -68,11 +76,44 @@
     </div>
 
     <div id="Home" class="tabcontent" style="display:block;">
-        <!-- Kosong karena video & tujuan di atas -->
+        <!-- Home kosong karena video & tujuan sudah di atas -->
     </div>
 
-    <!-- Tab Kosakata, Grammar, Dialog, Culture, Latihan dengan header warna + carousel gambar -->
-    <!-- Konten lengkap seperti versi sebelumnya -->
+    <div id="Kosakata" class="tabcontent">
+        <div class="section-header header-kosakata">어휘 KOSAKATA</div>
+        <div class="carousel">
+            <!-- Pekerjaan kartun -->
+            <img src="https://example.com/job1.jpg" alt="Guru">
+            <img src="https://example.com/job2.jpg" alt="근로자">
+        </div>
+    </div>
+
+    <div id="Grammar" class="tabcontent">
+        <div class="section-header header-grammar">문법 TATA BAHASA</div>
+        <div class="carousel">
+        </div>
+    </div>
+
+    <div id="Dialog" class="tabcontent">
+        <div class="section-header header-dialog">대화 PERCAKAPAN</div>
+        <div class="carousel">
+        </div>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
+        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3"></audio>
+    </div>
+
+    <div id="Culture" class="tabcontent">
+        <div class="section-header header-culture">문화와 정보 BUDAYA & INFORMASI</div>
+        <div class="carousel">
+        </div>
+    </div>
+
+    <div id="Latihan" class="tabcontent">
+        <div class="section-header header-latihan">학습 확인 LATIHAN & QUIZ</div>
+        <div class="carousel">
+        </div>
+    </div>
 </div>
 
 <script>
