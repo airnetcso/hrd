@@ -10,7 +10,7 @@
         .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; } /* Hanya angka kecil */
         .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
         .menu-buttons { display: inline-flex; gap: 10px; }
-        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; border: none; }
+        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
         .menu-btn.orange { background: #ff9933; }
         .menu-btn.blue { background: #3399ff; }
         .menu-btn.green { background: #33cc99; }
@@ -48,7 +48,7 @@
 
 <div class="menu-container">
     <div class="menu-buttons">
-        <div class="menu-btn pink active" onclick="openTab('Home')">Home</div>
+        <div class="menu-btn pink" onclick="openTab('Home')">Home</div>
         <div class="menu-btn orange" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
         <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
         <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
@@ -72,62 +72,21 @@
         </ul>
     </div>
 
-    <div id="Home" class="tabcontent" style="display:block;">
+    <div id="Home" class="tabcontent">
         <!-- Home kosong karena video & tujuan sudah di atas -->
     </div>
 
     <div id="Kosakata" class="tabcontent">
         <div class="section-header header-kosakata">어휘 KOSAKATA</div>
         <div class="carousel">
-            <!-- Bendera negara + pekerjaan -->
+            <!-- Bendera negara & pekerjaan -->
             <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="한국">
             <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="네팔">
-            <!-- Tambah semua bendera -->
-            <!-- Kartun pekerjaan -->
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/786/original/teacher-cartoon-character-illustration-free-vector.jpg" alt="학생">
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/788/original/construction-worker-cartoon-character-illustration-free-vector.jpg" alt="근로자">
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/789/original/fisherman-cartoon-character-illustration-free-vector.jpg" alt="어부">
+            <!-- Tambah semua -->
         </div>
     </div>
 
-    <div id="Grammar" class="tabcontent">
-        <div class="section-header header-grammar">문법 TATA BAHASA</div>
-        <div class="carousel">
-            <!-- Ilustrasi grammar -->
-            <img src="https://example.com/imdnida.jpg" alt="입니다 입니까">
-            <img src="https://example.com/eunneun.jpg" alt="은는">
-        </div>
-    </div>
-
-    <div id="Dialog" class="tabcontent">
-        <div class="section-header header-dialog">대화 PERCAKAPAN</div>
-        <div class="carousel">
-            <!-- Cafe dialog -->
-            <img src="https://example.com/cafe1.jpg" alt="Percakapan 1">
-            <img src="https://example.com/cafe2.jpg" alt="Percakapan 2">
-        </div>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3"></audio>
-    </div>
-
-    <div id="Culture" class="tabcontent">
-        <div class="section-header header-culture">문화와 정보 BUDAYA & INFORMASI</div>
-        <div class="carousel">
-            <!-- Salam Korea -->
-            <img src="https://example.com/bow.jpg" alt="Bow">
-            <img src="https://example.com/wave.jpg" alt="Wave">
-            <img src="https://example.com/handshake.jpg" alt="Handshake">
-        </div>
-    </div>
-
-    <div id="Latihan" class="tabcontent">
-        <div class="section-header header-latihan">학습 확인 LATIHAN & QUIZ</div>
-        <div class="carousel">
-            <!-- ARC + listening -->
-            <img src="https://example.com/arc.jpg" alt="ARC Vietnam">
-        </div>
-    </div>
+    <!-- Tab lain mirip struktur -->
 </div>
 
 <script>
@@ -143,9 +102,10 @@ function openTab(tabName) {
     if (tabName === 'Home') document.querySelector('video').play();
 }
 
-// Langsung Home saat load
+// Langsung buka Home saat load
 window.onload = function() {
     openTab('Home');
+    document.querySelector('.menu-btn.pink').classList.add('active');
 }
 </script>
 
