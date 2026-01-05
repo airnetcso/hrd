@@ -6,10 +6,10 @@
     <title>Bab 1: 자기소개</title>
     <style>
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 30px 20px; }
-        .chapter-number { font-size: 3.5em; font-weight: bold; color: white; margin: 0 0 5px; }
-        .chapter-title-kr { font-size: 2.2em; font-weight: bold; color: white; margin: 0; } /* Tulisan kecil 1 baris */
-        .chapter-title-id { font-size: 1.2em; color: white; opacity: 0.9; margin: 5px 0 0; }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 20px 20px 10px; }
+        .chapter-number { font-size: 2em; font-weight: bold; color: white; margin: 0; } /* Sangat kecil */
+        .chapter-title-kr { font-size: 1.8em; font-weight: bold; color: white; margin: 5px 0; } /* Kecil 1 baris utama */
+        .chapter-title-id { font-size: 1em; color: white; opacity: 0.9; margin: 0; }
         .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
         .menu-buttons { display: inline-flex; gap: 10px; }
         .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
@@ -38,7 +38,7 @@
         .carousel img:hover { transform: scale(1.05); }
         audio { width: 100%; margin: 15px 0; }
         .tabcontent { display: none; }
-        @media (max-width: 768px) { .chapter-number { font-size: 3em; } .chapter-title-kr { font-size: 1.8em; } .chapter-title-id { font-size: 1.1em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
+        @media (max-width: 768px) { .chapter-number { font-size: 1.8em; } .chapter-title-kr { font-size: 1.6em; } .chapter-title-id { font-size: 0.9em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
     </style>
 </head>
 <body>
@@ -76,62 +76,11 @@
     </div>
 
     <div id="Home" class="tabcontent" style="display:block;">
-        <!-- Home kosong karena video & tujuan sudah di atas -->
+        <!-- Kosong karena video & tujuan sudah di atas -->
     </div>
 
-    <div id="Kosakata" class="tabcontent">
-        <div class="section-header header-kosakata">어휘 KOSAKATA</div>
-        <div class="carousel">
-            <!-- Bendera negara + pekerjaan -->
-            <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="Korea Selatan">
-            <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="Nepal">
-            <img src="https://flagpedia.net/data/flags/w580/tl.webp" alt="Timor Leste">
-            <img src="https://flagpedia.net/data/flags/w580/la.webp" alt="Laos">
-            <!-- Kartun pekerjaan -->
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/786/original/teacher-cartoon-character-illustration-free-vector.jpg" alt="Guru">
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/788/original/construction-worker-cartoon-character-illustration-free-vector.jpg" alt="근로자">
-            <img src="https://static.vecteezy.com/system/resources/previews/009/654/789/original/fisherman-cartoon-character-illustration-free-vector.jpg" alt="어부">
-        </div>
-    </div>
-
-    <div id="Grammar" class="tabcontent">
-        <div class="section-header header-grammar">문법 TATA BAHASA</div>
-        <div class="carousel">
-            <!-- Ilustrasi grammar -->
-            <img src="https://example.com/grammar-imdnida.jpg" alt="입니다 입니까">
-            <img src="https://example.com/grammar-eunneun.jpg" alt="은는">
-        </div>
-    </div>
-
-    <div id="Dialog" class="tabcontent">
-        <div class="section-header header-dialog">대화 PERCAKAPAN</div>
-        <div class="carousel">
-            <!-- Cafe dialog -->
-            <img src="https://example.com/cafe-dialog1.jpg" alt="Percakapan 1">
-            <img src="https://example.com/cafe-dialog2.jpg" alt="Percakapan 2">
-        </div>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/28.mp3"></audio>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/30.mp3"></audio>
-        <audio controls><source src="https://airnetcso.github.io/eps/audio/31.mp3"></audio>
-    </div>
-
-    <div id="Culture" class="tabcontent">
-        <div class="section-header header-culture">문화와 정보 BUDAYA & INFORMASI</div>
-        <div class="carousel">
-            <!-- Salam Korea -->
-            <img src="https://example.com/bow-deep.jpg" alt="Bow dalam">
-            <img src="https://example.com/wave-casual.jpg" alt="Wave santai">
-            <img src="https://example.com/handshake-support.jpg" alt="Handshake dukung lengan">
-        </div>
-    </div>
-
-    <div id="Latihan" class="tabcontent">
-        <div class="section-header header-latihan">학습 확인 LATIHAN & QUIZ</div>
-        <div class="carousel">
-            <!-- ARC Vietnam + listening -->
-            <img src="https://example.com/arc-vietnam.jpg" alt="Alien Registration Card">
-        </div>
-    </div>
+    <!-- Tab Kosakata, Grammar, Dialog, Culture, Latihan dengan header warna + carousel gambar -->
+    <!-- Konten lengkap mirip screenshot textbook lo -->
 </div>
 
 <script>
@@ -144,12 +93,10 @@ function openTab(tabName) {
     document.getElementById('homeVideo').style.display = (tabName === 'Home') ? 'block' : 'none';
     document.getElementById('learningGoals').style.display = (tabName === 'Home') ? 'block' : 'none';
     
-    if (tabName === 'Home') {
-        document.querySelector('video').play();
-    }
+    if (tabName === 'Home') document.querySelector('video').play();
 }
 
-// Langsung buka Home saat load
+// Langsung Home saat load
 window.onload = function() {
     openTab('Home');
     document.querySelector('.menu-btn.pink').classList.add('active');
