@@ -5,49 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPS-TOPIK Digital 2024 - Bab 1-30</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: linear-gradient(to bottom, #fff0f5, #ffe6f0); margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 60px 20px; color: white; }
-        h1 { font-size: 2.8em; margin: 0 0 10px; }
-        .subtitle { font-size: 1.4em; opacity: 0.9; }
-        .container { max-width: 1200px; margin: 40px auto; padding: 20px; }
-        .bab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-        .bab-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s; text-decoration: none; color: #333; }
-        .bab-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-        .bab-number { background: #ff66aa; color: white; font-size: 3em; font-weight: bold; text-align: center; padding: 20px 0; }
-        .bab-title { text-align: center; padding: 20px; font-size: 1.3em; }
-        .bab-title-kr { font-weight: bold; color: #ff3388; }
-        .bab-title-id { font-size: 0.9em; color: #666; margin-top: 8px; }
-        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9em; }
-        @media (max-width: 768px) { h1 { font-size: 2.2em; } .bab-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .bab-grid { grid-template-columns: 1fr; } }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: #fff0f5; 
+            margin: 0; 
+            padding: 0; 
+            color: #333; 
+        }
+        header { 
+            background: linear-gradient(to bottom, #ff99cc, #ff66aa); 
+            text-align: center; 
+            padding: 60px 20px; 
+            color: white; 
+        }
+        h1 { 
+            font-size: 2.8em; 
+            margin: 0 0 10px; 
+        }
+        .subtitle { 
+            font-size: 1.4em; 
+            margin: 0; 
+            opacity: 0.9; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 20px; 
+        }
+        .bab-list { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .bab-item { 
+            background: white; 
+            margin: 15px 0; 
+            padding: 20px; 
+            border-radius: 15px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); 
+            transition: all 0.3s; 
+        }
+        .bab-item:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15); 
+        }
+        .bab-item a { 
+            text-decoration: none; 
+            color: #333; 
+            display: block; 
+        }
+        .bab-number { 
+            font-size: 1.8em; 
+            font-weight: bold; 
+            color: #ff66aa; 
+        }
+        .bab-title-kr { 
+            font-size: 1.6em; 
+            font-weight: bold; 
+            color: #ff3388; 
+        }
+        .bab-title-id { 
+            font-size: 1.1em; 
+            color: #666; 
+            margin-top: 5px; 
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: #888; 
+            font-size: 0.9em; 
+            background: #fff0f5; 
+        }
+        @media (max-width: 768px) { 
+            h1 { font-size: 2.2em; } 
+            .subtitle { font-size: 1.2em; } 
+            .bab-number { font-size: 1.6em; } 
+            .bab-title-kr { font-size: 1.4em; } 
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>EPS-TOPIK Digital</h1>
-    <p class="subtitle">Bahasa Korea Interaktif • Bab 1–30</p>
+    <p class="subtitle">Bahasa Korea Interaktif 2024 • Bab 1–30</p>
 </header>
 
 <div class="container">
-    <div class="bab-grid">
-        <!-- Bab 1 -->
-        <a href="bab1.html" class="bab-card">
-            <div class="bab-number">1</div>
-            <div class="bab-title">
+    <ul class="bab-list">
+        <li class="bab-item">
+            <a href="bab1.html">
+                <span class="bab-number">BAB 1</span>
                 <div class="bab-title-kr">자기소개</div>
-                <div class="bab-title-id">Perkenalan Diri</div>
-            </div>
-        </a>
+                <div class="bab-title-id">(Perkenalan Diri)</div>
+            </a>
+        </li>
 
-        <!-- Bab 2-30 (contoh, lo isi judulnya nanti) -->
-        <!-- <a href="bab2.html" class="bab-card"> ... </a> -->
-        <!-- Sampai bab 30 -->
-    </div>
+        <li class="bab-item">
+            <a href="bab2.html">
+                <span class="bab-number">BAB 2</span>
+                <div class="bab-title-kr">생활용품</div>
+                <div class="bab-title-id">(Barang Kehidupan Sehari-hari)</div>
+            </a>
+        </li>
+
+        <li class="bab-item">
+            <a href="bab3.html">
+                <span class="bab-number">BAB 3</span>
+                <div class="bab-title-kr">위치와 장소</div>
+                <div class="bab-title-id">(Posisi dan Tempat)</div>
+            </a>
+        </li>
+
+        <li class="bab-item">
+            <a href="bab4.html">
+                <span class="bab-number">BAB 4</span>
+                <div class="bab-title-kr">동작과 사물</div>
+                <div class="bab-title-id">(Gerakan dan Benda)</div>
+            </a>
+        </li>
+
+        <li class="bab-item">
+            <a href="bab5.html">
+                <span class="bab-number">BAB 5</span>
+                <div class="bab-title-kr">날짜와 요일</div>
+                <div class="bab-title-id">(Tanggal dan Hari)</div>
+            </a>
+        </li>
+
+        <li class="bab-item">
+            <a href="bab6.html">
+                <span class="bab-number">BAB 6</span>
+                <div class="bab-title-kr">하루 일과</div>
+                <div class="bab-title-id">(Rutinitas Harian)</div>
+            </a>
+        </li>
+
+        <!-- Tambah sampai BAB 30 di sini -->
+        <!-- Contoh BAB 7 dst -->
+        <!-- <li class="bab-item">
+            <a href="bab7.html">
+                <span class="bab-number">BAB 7</span>
+                <div class="bab-title-kr">제목 한국어</div>
+                <div class="bab-title-id">(Judul Indonesia)</div>
+            </a>
+        </li> -->
+
+    </ul>
 </div>
 
 <footer>
-    EPS-TOPIK Digital 2024 • Dibuat untuk pekerja Indonesia di Korea ❤️
+    EPS-TOPIK Digital 2024 • Dibuat dengan ❤️ untuk pekerja Indonesia di Korea
 </footer>
 
 </body>
