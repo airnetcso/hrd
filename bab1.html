@@ -1,60 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bab 1</title>
-    <style>
-        body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); padding: 15px 20px; display: flex; align-items: center; justify-content: flex-start; }
-        .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; }
-        .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
-        .menu-buttons { display: inline-flex; gap: 10px; }
-        .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
-        .menu-btn.orange { background: #ff9933; }
-        .menu-btn.blue { background: #3399ff; }
-        .menu-btn.green { background: #33cc99; }
-        .menu-btn.purple { background: #9933cc; }
-        .menu-btn.brown { background: #996633; }
-        .menu-btn.pink { background: #ff66aa; }
-        .menu-btn.active { opacity: 0.8; }
-        .video-container { width: 100%; padding: 0 20px 30px; box-sizing: border-box; display: none; }
-        video { width: 100%; height: auto; max-height: 70vh; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-        .container { max-width: 1100px; margin: 0 auto 20px; padding: 20px; background: white; box-shadow: 0 5px 25px rgba(0,0,0,0.15); }
-        .learning-goals { background: #fff5fb; padding: 30px; border: 3px solid #ff99cc; margin-bottom: 30px; text-align: center; font-size: 1.2em; display: none; }
-        .learning-goals h2 { color: #ff3388; margin-top: 0; }
-        .learning-goals ul { list-style: none; padding: 0; }
-        .learning-goals li { margin: 25px 0; }
-        .learning-goals .korean { font-weight: bold; color: #ff3388; display: block; font-size: 1.1em; }
-        .section-header { text-align: center; padding: 15px; color: white; font-size: 1.5em; margin: -20px -20px 20px; }
-        .header-grammar { background: #ff9933; }
-        .header-kosakata { background: #3399ff; }
-        .header-dialog { background: #9933cc; }
-        .header-culture { background: #33cc99; }
-        .header-latihan { background: #996633; }
-        .carousel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 15px 0; }
-        .carousel img { box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: auto; transition: transform 0.3s; }
-        .carousel img:hover { transform: scale(1.05); }
-        audio { width: 100%; margin: 15px 0; }
-        .tabcontent { display: none; }
-        @media (max-width: 768px) { .chapter-number { font-size: 1.6em; } .menu-btn { font-size: 0.8em; padding: 6px 10px; min-width: 90px; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 1 - EPS TOPIK</title>
+
+<style>
+body { font-family: Arial, sans-serif; background:#fff0f5; margin:0; color:#333; }
+header { background:linear-gradient(#ff99cc,#ff66aa); padding:15px; }
+.chapter-number { font-size:1.8em; color:white; font-weight:bold; }
+
+.menu-container { background:#fff0f5; padding:10px; overflow-x:auto; }
+.menu-buttons { display:flex; gap:10px; }
+.menu-btn {
+    padding:8px 12px; min-width:100px;
+    font-size:0.85em; color:white;
+    cursor:pointer; text-align:center;
+}
+.menu-btn.active { opacity:0.8; }
+
+.pink{background:#ff66aa;}
+.orange{background:#ff9933;}
+.blue{background:#3399ff;}
+.green{background:#33cc99;}
+.purple{background:#9933cc;}
+.brown{background:#996633;}
+
+.video-container { display:none; padding:20px; }
+video { width:100%; max-height:70vh; box-shadow:0 4px 20px rgba(0,0,0,.2); }
+
+.container {
+    max-width:1100px;
+    margin:0 auto 20px;
+    background:white;
+    padding:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,.15);
+}
+
+.learning-goals {
+    display:none;
+    background:#fff5fb;
+    border:3px solid #ff99cc;
+    padding:25px;
+    text-align:center;
+}
+.learning-goals h2 { color:#ff3388; }
+
+.section-header {
+    color:white;
+    padding:12px;
+    font-size:1.4em;
+    margin:-20px -20px 20px;
+}
+.header-kosakata { background:#3399ff; }
+
+.tabcontent { display:none; }
+
+.carousel {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+.carousel img { width:100%; box-shadow:0 4px 10px rgba(0,0,0,.1); }
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="chapter-number">1</div>
+    <div class="chapter-number">BAB 1</div>
 </header>
 
 <div class="menu-container">
-    <div class="menu-buttons">
-        <div class="menu-btn pink" onclick="openTab('Home')">Home</div>
-        <div class="menu-btn orange" onclick="openTab('Grammar')">문법<br>Tata Bahasa</div>
-        <div class="menu-btn blue" onclick="openTab('Kosakata')">어휘<br>Kosakata</div>
-        <div class="menu-btn green" onclick="openTab('Culture')">문화와 정보<br>Budaya & Informasi</div>
-        <div class="menu-btn purple" onclick="openTab('Dialog')">대화<br>Percakapan</div>
-        <div class="menu-btn brown" onclick="openTab('Latihan')">학습 확인<br>Latihan & Quiz</div>
-    </div>
+<div class="menu-buttons">
+    <div class="menu-btn pink" onclick="openTab('Home',this)">Home</div>
+    <div class="menu-btn orange" onclick="openTab('Grammar',this)">문법<br>Tata Bahasa</div>
+    <div class="menu-btn blue" onclick="openTab('Kosakata',this)">어휘<br>Kosakata</div>
+    <div class="menu-btn green" onclick="openTab('Culture',this)">문화<br>Budaya</div>
+    <div class="menu-btn purple" onclick="openTab('Dialog',this)">대화<br>Percakapan</div>
+    <div class="menu-btn brown" onclick="openTab('Latihan',this)">연습<br>Latihan</div>
+</div>
 </div>
 
 <div class="video-container" id="homeVideo">
@@ -64,60 +89,49 @@
 </div>
 
 <div class="container">
-    <div class="learning-goals" id="learningGoals">
-        <h2>학습 목표<br>Tujuan Pembelajaran</h2>
-        <ul>
-            <li><span class="korean">어느 나라 사람인지 묻고 대답할 수 있다.</span>Mampu bertanya dan menjawab tentang asal negara seseorang.</li>
-            <li><span class="korean">직업이 무엇인지 묻고 대답할 수 있다.</span>Mampu bertanya dan menjawab tentang pekerjaan seseorang.</li>
-        </ul>
-    </div>
 
-    <div id="Home" class="tabcontent">
-        <!-- Home kosong karena video & tujuan sudah di atas -->
-    </div>
+<div class="learning-goals" id="learningGoals">
+    <h2>학습 목표<br>Tujuan Pembelajaran</h2>
+    <p><b>어느 나라 사람입니까?</b><br>Menanyakan asal negara</p>
+    <p><b>직업이 무엇입니까?</b><br>Menanyakan pekerjaan</p>
+</div>
 
-    <div id="Kosakata" class="tabcontent">
-        <div class="section-header header-kosakata">어휘 KOSAKATA</div>
-        <div class="carousel">
-            <!-- Bendera negara & pekerjaan -->
-            <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="한국">
-            <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="네팔">
-            <!-- Tambah semua bendera & kartun pekerjaan -->
-        </div>
-    </div>
+<div id="Home" class="tabcontent"></div>
 
-    <!-- Tab Grammar, Dialog, Culture, Latihan mirip struktur -->
+<div id="Kosakata" class="tabcontent">
+    <div class="section-header header-kosakata">어휘 KOSAKATA</div>
+    <div class="carousel">
+        <img src="https://flagpedia.net/data/flags/w580/kr.webp">
+        <img src="https://flagpedia.net/data/flags/w580/id.webp">
+    </div>
+</div>
+
+<div id="Grammar" class="tabcontent"></div>
+<div id="Culture" class="tabcontent"></div>
+<div id="Dialog" class="tabcontent"></div>
+<div id="Latihan" class="tabcontent"></div>
+
 </div>
 
 <script>
-function openTab(tabName) {
-    // Hide all tabcontent
-    document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
-    
-    // Remove active from all buttons
-    document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
-    
-    // Show selected tab
-    document.getElementById(tabName).style.display = 'block';
-    
-    // Add active to clicked button
-    event.currentTarget.classList.add('active');
-    
-    // Show/hide video & learning goals
-    document.getElementById('homeVideo').style.display = (tabName === 'Home') ? 'block' : 'none';
-    document.getElementById('learningGoals').style.display = (tabName === 'Home') ? 'block' : 'none';
-    
-    // Play video if Home
-    if (tabName === 'Home') {
-        document.querySelector('video').play();
-    }
+function openTab(tab, btn){
+    document.querySelectorAll('.tabcontent').forEach(t=>t.style.display='none');
+    document.querySelectorAll('.menu-btn').forEach(b=>b.classList.remove('active'));
+
+    document.getElementById(tab).style.display='block';
+    if(btn) btn.classList.add('active');
+
+    const home = (tab==='Home');
+    document.getElementById('homeVideo').style.display = home?'block':'none';
+    document.getElementById('learningGoals').style.display = home?'block':'none';
 }
 
-// Langsung buka Home saat page load
-window.onload = function() {
-    openTab('Home');
-    document.querySelector('.menu-btn.pink').classList.add('active');
-}
+window.onload = function(){
+    const tab = location.hash.replace('#','') || 'Home';
+    const btn = [...document.querySelectorAll('.menu-btn')]
+        .find(b => b.onclick.toString().includes(tab));
+    openTab(tab, btn);
+};
 </script>
 
 </body>
