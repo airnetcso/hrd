@@ -51,22 +51,7 @@ video {
 }
 .learning-goals h2 { color:#ff3388; }
 
-.section-header {
-    color:white;
-    padding:12px;
-    font-size:1.4em;
-    margin:-20px -20px 20px;
-}
-.header-kosakata { background:#3399ff; }
-
 .tabcontent { display:none; }
-
-.carousel {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:15px;
-}
-.carousel img { width:100%; box-shadow:0 4px 10px rgba(0,0,0,.1); }
 </style>
 </head>
 
@@ -79,41 +64,36 @@ video {
 <div class="menu-container">
 <div class="menu-buttons">
     <div class="menu-btn pink" onclick="openTab('Home',this)">Home</div>
-    <div class="menu-btn orange" onclick="openTab('Grammar',this)">문법<br>Tata Bahasa</div>
-    <div class="menu-btn blue" onclick="openTab('Kosakata',this)">어휘<br>Kosakata</div>
-    <div class="menu-btn green" onclick="openTab('Culture',this)">문화<br>Budaya</div>
-    <div class="menu-btn purple" onclick="openTab('Dialog',this)">대화<br>Percakapan</div>
-    <div class="menu-btn brown" onclick="openTab('Latihan',this)">연습<br>Latihan</div>
+    <div class="menu-btn orange" onclick="openTab('Grammar',this)">문법</div>
+    <div class="menu-btn blue" onclick="openTab('Kosakata',this)">어휘</div>
+    <div class="menu-btn green" onclick="openTab('Culture',this)">문화</div>
+    <div class="menu-btn purple" onclick="openTab('Dialog',this)">대화</div>
+    <div class="menu-btn brown" onclick="openTab('Latihan',this)">연습</div>
 </div>
 </div>
 
-<!-- VIDEO HOME (SUARA AKTIF) -->
+<!-- VIDEO AUTOPLAY (MUTED AWAL) -->
 <div class="video-container" id="homeVideo">
-    <video controls playsinline preload="metadata">
+    <video id="introVideo"
+           autoplay
+           muted
+           playsinline
+           preload="auto">
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
-        Browser tidak mendukung video
     </video>
 </div>
 
 <div class="container">
 
 <div class="learning-goals" id="learningGoals">
-    <h2>학습 목표<br>Tujuan Pembelajaran</h2>
-    <p><b>어느 나라 사람입니까?</b><br>Menanyakan asal negara</p>
-    <p><b>직업이 무엇입니까?</b><br>Menanyakan pekerjaan</p>
+    <h2>학습 목표</h2>
+    <p>어느 나라 사람입니까?</p>
+    <p>직업이 무엇입니까?</p>
 </div>
 
 <div id="Home" class="tabcontent"></div>
-
-<div id="Kosakata" class="tabcontent">
-    <div class="section-header header-kosakata">어휘 KOSAKATA</div>
-    <div class="carousel">
-        <img src="https://flagpedia.net/data/flags/w580/kr.webp">
-        <img src="https://flagpedia.net/data/flags/w580/id.webp">
-    </div>
-</div>
-
 <div id="Grammar" class="tabcontent"></div>
+<div id="Kosakata" class="tabcontent"></div>
 <div id="Culture" class="tabcontent"></div>
 <div id="Dialog" class="tabcontent"></div>
 <div id="Latihan" class="tabcontent"></div>
@@ -121,6 +101,8 @@ video {
 </div>
 
 <script>
+let soundUnlocked = false;
+
 function openTab(tab, btn){
     document.querySelectorAll('.tabcontent').forEach(t=>t.style.display='none');
     document.querySelectorAll('.menu-btn').forEach(b=>b.classList.remove('active'));
@@ -128,10 +110,26 @@ function openTab(tab, btn){
     document.getElementById(tab).style.display='block';
     if(btn) btn.classList.add('active');
 
-    const home = (tab==='Home');
-    document.getElementById('homeVideo').style.display = home?'block':'none';
-    document.getElementById('learningGoals').style.display = home?'block':'none';
+    const home = (tab === 'Home');
+    document.getElementById('homeVideo').style.display = home ? 'block' : 'none';
+    document.getElementById('learningGoals').style.display = home ? 'block' : 'none';
+
+    if(home) tryUnlockSound();
 }
+
+// 🔓 buka suara setelah interaksi user
+function tryUnlockSound(){
+    if(soundUnlocked) return;
+    const v = document.getElementById('introVideo');
+    v.muted = false;
+    v.volume = 1.0;
+    v.play().catch(()=>{});
+    soundUnlocked = true;
+}
+
+// klik di mana saja = izin suara
+document.addEventListener('click', tryUnlockSound, { once:true });
+document.addEventListener('touchstart', tryUnlockSound, { once:true });
 
 window.onload = function(){
     const tab = location.hash.replace('#','') || 'Home';
