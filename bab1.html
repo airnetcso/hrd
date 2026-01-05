@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BAB 1 | 자기소개</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB 1 | 자기소개</title>
 
-<style>
-body { font-family: Arial, sans-serif; background:#fff0f5; margin:0; }
-header { background:linear-gradient(#ff99cc,#ff66aa); padding:15px; color:#fff; font-size:1.5em; }
+    <style>
+        body { font-family: Arial, sans-serif; background:#fff0f5; margin:0; }
+        header { background:linear-gradient(#ff99cc,#ff66aa); padding:15px; color:#fff; font-size:1.5em; text-align:center; }
 
-.menu-container { background:#fff0f5; padding:10px; overflow-x:auto; }
-.menu-buttons { display:flex; gap:10px; }
-.menu-btn {
-  padding:8px 12px; min-width:100px;
-  color:#fff; text-align:center; cursor:pointer;
-}
-.pink{background:#ff66aa}.orange{background:#ff9933}.blue{background:#3399ff}
-.green{background:#33cc99}.purple{background:#9933cc}.brown{background:#996633}
-.menu-btn.active{opacity:.7}
+        .menu-container { background:#fff0f5; padding:10px; overflow-x:auto; }
+        .menu-buttons { display:flex; gap:10px; white-space:nowrap; }
+        .menu-btn {
+            padding:8px 12px; min-width:100px;
+            color:#fff; text-align:center; cursor:pointer; border-radius:4px;
+        }
+        .pink{background:#ff66aa}.orange{background:#ff9933}.blue{background:#3399ff}
+        .green{background:#33cc99}.purple{background:#9933cc}.brown{background:#996633}
+        .menu-btn.active{opacity:0.7}
 
-.video-container{display:none;padding:10px}
-video{width:100%;max-height:70vh;object-fit:cover}
+        .video-container{display:none; padding:10px;}
+        video{width:100%; max-height:70vh; object-fit:cover; border-radius:8px;}
 
-.container{max-width:1100px;margin:auto;background:#fff;padding:20px}
-.tabcontent{display:none}
-.section-header{
-  margin:-20px -20px 20px;
-  padding:12px;
-  color:#fff;
-  font-size:1.4em;
-  text-align:center;
-}
-.header-grammar{background:#ff9933}
-.header-kosakata{background:#3399ff}
-.header-dialog{background:#9933cc}
-.header-culture{background:#33cc99}
-.header-latihan{background:#996633}
-</style>
+        .container{max-width:1100px; margin:auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+        .tabcontent{display:none; line-height:1.6;}
+        .section-header{
+            margin:-20px -20px 20px;
+            padding:15px;
+            color:#fff;
+            font-size:1.4em;
+            text-align:center;
+            border-radius:8px 8px 0 0;
+        }
+        .header-grammar{background:#ff9933}
+        .header-kosakata{background:#3399ff}
+        .header-dialog{background:#9933cc}
+        .header-culture{background:#33cc99}
+        .header-latihan{background:#996633}
+    </style>
 </head>
 
 <body>
@@ -44,98 +45,114 @@ video{width:100%;max-height:70vh;object-fit:cover}
 <header>BAB 1 · 자기소개</header>
 
 <div class="menu-container">
-<div class="menu-buttons">
-<div class="menu-btn pink" onclick="openTab('Home')">Home</div>
-<div class="menu-btn orange" onclick="openTab('Grammar')">Grammar</div>
-<div class="menu-btn blue" onclick="openTab('Kosakata')">Kosakata</div>
-<div class="menu-btn purple" onclick="openTab('Dialog')">Dialog</div>
-<div class="menu-btn green" onclick="openTab('Culture')">Culture</div>
-<div class="menu-btn brown" onclick="openTab('Latihan')">Latihan</div>
-</div>
+    <div class="menu-buttons">
+        <div class="menu-btn pink" onclick="openTab('Home')">Home</div>
+        <div class="menu-btn orange" onclick="openTab('Grammar')">Grammar</div>
+        <div class="menu-btn blue" onclick="openTab('Kosakata')">Kosakata</div>
+        <div class="menu-btn purple" onclick="openTab('Dialog')">Dialog</div>
+        <div class="menu-btn green" onclick="openTab('Culture')">Culture</div>
+        <div class="menu-btn brown" onclick="openTab('Latihan')">Latihan</div>
+    </div>
 </div>
 
-<!-- HOME VIDEO (AUTOPLAY WORKS) -->
+<!-- HOME VIDEO (AUTOPLAY LOOP) -->
 <div class="video-container" id="homeVideo">
-<video autoplay muted loop playsinline>
-  <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
-</video>
+    <video autoplay muted loop playsinline>
+        <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
 </div>
 
-<!-- AUDIO TAB (UNLOCKED AFTER CLICK) -->
+<!-- AUDIO UNTUK TAB LAIN -->
 <audio id="tabAudio" preload="auto">
-  <source src="https://airnetcso.github.io/hrd/audio/b1.mp3" type="audio/mpeg">
+    <source src="https://airnetcso.github.io/hrd/audio/b1.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
 </audio>
 
 <div class="container">
 
-<div id="Home" class="tabcontent"></div>
+    <div id="Home" class="tabcontent">
+        <!-- Kosong atau bisa diisi intro singkat kalau mau -->
+        <p>Selamat datang di Bab 1: Perkenalan Diri (자기소개)</p>
+    </div>
 
-<div id="Grammar" class="tabcontent">
-<div class="section-header header-grammar">문법</div>
-<p>입니다 / 입니까 → digunakan dalam situasi formal.</p>
-</div>
+    <div id="Grammar" class="tabcontent">
+        <div class="section-header header-grammar">문법 (Grammar)</div>
+        <p>입니다 / 입니까 → digunakan dalam situasi formal untuk menyatakan identitas atau status.</p>
+        <p>Contoh: 저는 회사원입니다. (Saya karyawan perusahaan.)</p>
+    </div>
 
-<div id="Kosakata" class="tabcontent">
-<div class="section-header header-kosakata">어휘</div>
-<p>회사원, 학생, 근로자</p>
-</div>
+    <div id="Kosakata" class="tabcontent">
+        <div class="section-header header-kosakata">어휘 (Kosakata)</div>
+        <p>회사원 (karyawan perusahaan), 학생 (pelajar), 근로자 (pekerja), 이름 (nama), 나라 (negara), etc.</p>
+    </div>
 
-<div id="Dialog" class="tabcontent">
-<div class="section-header header-dialog">대화</div>
-<p>안녕하세요? 아궁입니다.</p>
-</div>
+    <div id="Dialog" class="tabcontent">
+        <div class="section-header header-dialog">대화 (Dialog)</div>
+        <p>안녕하세요? 저는 아궁입니다.<br>
+        만나서 반갑습니다. 저는 인도네시아 사람입니다.</p>
+    </div>
 
-<div id="Culture" class="tabcontent">
-<div class="section-header header-culture">문화</div>
-<p>Perkenalan di Korea bersifat formal.</p>
-</div>
+    <div id="Culture" class="tabcontent">
+        <div class="section-header header-culture">문화 (Culture)</div>
+        <p>Perkenalan diri di Korea biasanya formal, menggunakan bahasa hormat, dan sering disertai membungkuk ringan sebagai tanda sopan santun.</p>
+    </div>
 
-<div id="Latihan" class="tabcontent">
-<div class="section-header header-latihan">연습</div>
-<p>저는 네팔 사람(은/는)입니다.</p>
-</div>
+    <div id="Latihan" class="tabcontent">
+        <div class="section-header header-latihan">연습 (Latihan)</div>
+        <p>Lengkapi kalimat:<br>
+        저는 네팔 사람___입니다. (은/는)<br><br>
+        이름___ 뭐예요? (이/가)</p>
+    </div>
 
 </div>
 
 <script>
-const tabAudio = document.getElementById('tabAudio');
-const playedTabs = {};
-let audioUnlocked = false;
+    const tabAudio = document.getElementById('tabAudio');
+    let audioUnlocked = false;
 
-function unlockAudio() {
-  if (!audioUnlocked) {
-    tabAudio.play().then(() => {
-      tabAudio.pause();
-      tabAudio.currentTime = 0;
-      audioUnlocked = true;
-    }).catch(()=>{});
-  }
-}
+    // Unlock permission audio (diperlukan browser modern)
+    function unlockAudio() {
+        if (!audioUnlocked) {
+            tabAudio.play().then(() => {
+                tabAudio.pause();
+                tabAudio.currentTime = 0;
+                audioUnlocked = true;
+            }).catch(() => {});
+        }
+    }
 
-function openTab(tab) {
-  unlockAudio();
+    function openTab(tab) {
+        // Unlock audio kalau belum pernah
+        unlockAudio();
 
-  document.querySelectorAll('.tabcontent').forEach(t => t.style.display='none');
-  document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+        // Sembunyikan semua tab
+        document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
+        document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
 
-  document.getElementById(tab).style.display='block';
-  event.currentTarget.classList.add('active');
+        // Tampilkan tab yang dipilih
+        document.getElementById(tab).style.display = 'block';
+        event.currentTarget.classList.add('active');
 
-  const isHome = tab === 'Home';
-  document.getElementById('homeVideo').style.display = isHome ? 'block' : 'none';
+        // Kontrol video Home
+        const isHome = tab === 'Home';
+        document.getElementById('homeVideo').style.display = isHome ? 'block' : 'none';
 
-  tabAudio.pause();
-  tabAudio.currentTime = 0;
+        // Reset dan putar audio ULANG setiap kali buka tab selain Home
+        tabAudio.pause();
+        tabAudio.currentTime = 0;
 
-  if (!isHome && audioUnlocked && !playedTabs[tab]) {
-    tabAudio.play().catch(()=>{});
-    playedTabs[tab] = true;
-  }
-}
+        if (!isHome && audioUnlocked) {
+            tabAudio.play().catch(() => {
+                console.log("Audio gagal diputar (mungkin browser blokir)");
+            });
+        }
+    }
 
-window.onload = () => {
-  document.querySelector('.menu-btn.pink').click();
-};
+    // Otomatis buka tab Home saat halaman load
+    window.onload = () => {
+        document.querySelector('.menu-btn.pink').click();
+    };
 </script>
 
 </body>
