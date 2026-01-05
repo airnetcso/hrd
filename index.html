@@ -1,41 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPS-TOPIK Digital 2024</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #fff0f5; margin: 0; padding: 20px; color: #444; }
-        header { background: #ff99cc; padding: 20px; text-align: center; color: white; }
-        h1 { font-size: 1.6em; margin: 0; }
-        .bab-list { max-width: 500px; margin: 30px auto; padding: 0; }
-        .bab-item { font-size: 0.85em; padding: 8px 0; border-bottom: 1px dotted #ddd; }
-        .bab-item a { text-decoration: none; color: #555; }
-        .bab-item a:hover { color: #ff66aa; }
-        .bab-number { font-weight: bold; color: #ff66aa; }
-        footer { text-align: center; padding: 30px; font-size: 0.8em; color: #999; }
-    </style>
+<meta charset="UTF-8">
+<title>EPS-TOPIK Digital Learning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff0f5;
+  color:#444;
+}
+header{
+  background:linear-gradient(to bottom,#ff99cc,#ff66aa);
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+  font-size:2em;
+}
+header p{
+  margin-top:10px;
+  font-size:1em;
+}
+
+.main{
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
+  text-align:center;
+  background:#fff;
+  box-shadow:0 5px 30px rgba(0,0,0,0.15);
+}
+
+.main h2{
+  color:#ff3388;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.feature{
+  background:#fff5fb;
+  padding:20px;
+  border:2px solid #ff99cc;
+}
+
+.feature h3{
+  margin-top:0;
+  color:#ff3388;
+}
+
+.start-btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:15px 30px;
+  background:#ff66aa;
+  color:#fff;
+  font-size:1.1em;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:0.8em;
+  color:#999;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>EPS-TOPIK Digital 2024 • Bab 1-30</h1>
+  <h1>EPS-TOPIK Digital Learning</h1>
+  <p>Belajar Bahasa Korea untuk Kerja secara Terstruktur & Interaktif</p>
 </header>
 
-<div class="bab-list">
-    <div class="bab-item"><a href="bab1.html#Home"><span class="bab-number">BAB 1</span> 자기소개 (Perkenalan Diri)</a></div>
-    <div class="bab-item"><a href="bab2.html#Home"><span class="bab-number">BAB 2</span> 생활용품 (Barang Kehidupan Sehari-hari)</a></div>
-    <div class="bab-item"><a href="bab3.html#Home"><span class="bab-number">BAB 3</span> 위치와 장소 (Posisi dan Tempat)</a></div>
-    <div class="bab-item"><a href="bab4.html#Home"><span class="bab-number">BAB 4</span> 동작과 사물 (Gerakan dan Benda)</a></div>
-    <div class="bab-item"><a href="bab5.html#Home"><span class="bab-number">BAB 5</span> 날짜와 요일 (Tanggal dan Hari)</a></div>
-    <div class="bab-item"><a href="bab6.html#Home"><span class="bab-number">BAB 6</span> 하루 일과 (Rutinitas Harian)</a></div>
-    <!-- Tambah sampai bab30.html#Home -->
-    <div class="bab-item"><a href="bab30.html#Home"><span class="bab-number">BAB 30</span> [Judul Bab 30]</a></div>
-</div>
+<section class="main">
+  <h2>Program Pelatihan Bahasa Korea (EPS-TOPIK)</h2>
+  <p>
+    Platform pembelajaran mandiri untuk persiapan EPS-TOPIK
+    dengan materi terstruktur, audio, video, dan latihan.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <h3>📘 Materi Lengkap</h3>
+      <p>Bab 1–30 sesuai standar EPS-TOPIK</p>
+    </div>
+    <div class="feature">
+      <h3>🎧 Audio & Video</h3>
+      <p>Listening, dialog, dan video pembuka tiap bab</p>
+    </div>
+    <div class="feature">
+      <h3>📝 Latihan</h3>
+      <p>Soal latihan dari buku & pengayaan</p>
+    </div>
+    <div class="feature">
+      <h3>💼 Budaya Kerja</h3>
+      <p>Pemahaman budaya kerja Korea</p>
+    </div>
+  </div>
+
+  <a class="start-btn" href="bab/index.html">
+    ▶ MULAI BELAJAR
+  </a>
+</section>
 
 <footer>
-    EPS-TOPIK Digital • Bab 1-30
+  © EPS-TOPIK Digital • HRD Training Platform
 </footer>
 
 </body>
