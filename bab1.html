@@ -37,24 +37,6 @@
         .header-dialog{background:#9933cc}
         .header-culture{background:#33cc99}
         .header-latihan{background:#996633}
-
-        /* Tombol aktifkan suara */
-        #enableAudioBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff66aa;
-            color: white;
-            border: none;
-            padding: 12px 16px;
-            border-radius: 50px;
-            font-size: 1em;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 1000;
-            display: none;
-        }
-        #enableAudioBtn:hover { background: #ff4499; }
     </style>
 </head>
 
@@ -73,22 +55,18 @@
     </div>
 </div>
 
-<!-- HOME VIDEO -->
+<!-- HOME VIDEO - AKAN UNMUTED SETELAH INTERAKSI -->
 <div class="video-container" id="homeVideo">
-    <video autoplay muted loop playsinline>
+    <video id="homeVid" loop playsinline>
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
         Browser Anda tidak mendukung video.
     </video>
 </div>
 
-<!-- AUDIO TAB -->
+<!-- AUDIO NARASI TAB -->
 <audio id="tabAudio" preload="auto">
     <source src="https://airnetcso.github.io/hrd/audio/b1.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung audio.
 </audio>
-
-<!-- Tombol Aktifkan Suara -->
-<button id="enableAudioBtn" onclick="enableAudio()">Aktifkan Suara 🔊</button>
 
 <div class="container">
 
@@ -104,47 +82,52 @@
 
     <div id="Kosakata" class="tabcontent">
         <div class="section-header header-kosakata">어휘 (Kosakata)</div>
-        <p>회사원 (karyawan perusahaan), 학생 (pelajar), 근로자 (pekerja), 이름 (nama), 나라 (negara), etc.</p>
+        <p>회사원 (karyawan perusahaan), 학생 (pelajar), 근로자 (pekerja), 이름 (nama), 나라 (negara)</p>
     </div>
 
     <div id="Dialog" class="tabcontent">
         <div class="section-header header-dialog">대화 (Dialog)</div>
-        <p>안녕하세요? 저는 아궁입니다.<br>
-        만나서 반갑습니다. 저는 인도네시아 사람입니다.</p>
+        <p>안녕하세요? 저는 아궁입니다.<br>만나서 반갑습니다. 저는 인도네시아 사람입니다.</p>
     </div>
 
     <div id="Culture" class="tabcontent">
         <div class="section-header header-culture">문화 (Culture)</div>
-        <p>Perkenalan diri di Korea biasanya formal, menggunakan bahasa hormat, dan sering disertai membungkuk ringan sebagai tanda sopan santun.</p>
+        <p>Perkenalan diri di Korea biasanya formal, menggunakan bahasa hormat, dan sering disertai membungkuk ringan.</p>
     </div>
 
     <div id="Latihan" class="tabcontent">
         <div class="section-header header-latihan">연습 (Latihan)</div>
-        <p>Lengkapi kalimat:<br>
-        저는 네팔 사람___입니다. (은/는)<br><br>
-        이름___ 뭐예요? (이/가)</p>
+        <p>Lengkapi kalimat:<br>저는 네팔 사람___입니다. (은/는)<br>이름___ 뭐예요? (이/가)</p>
     </div>
 
 </div>
 
 <script>
+    const homeVideo = document.getElementById('homeVid');
     const tabAudio = document.getElementById('tabAudio');
-    const enableBtn = document.getElementById('enableAudioBtn');
-    let audioEnabled = false;
+    let userInteracted = false;
 
-    // Fungsi aktifkan audio saat user klik tombol
-    function enableAudio() {
-        tabAudio.play().then(() => {
-            tabAudio.pause();
-            tabAudio.currentTime = 0;
-            audioEnabled = true;
-            enableBtn.style.display = 'none'; // Sembunyikan tombol setelah aktif
-        }).catch((err) => {
-            console.log("Gagal aktifkan audio:", err);
-        });
+    // Unlock autoplay dengan suara setelah user klik tab pertama kali
+    function unlockMedia() {
+        if (!userInteracted) {
+            // Coba play video dengan suara
+            homeVideo.muted = false;
+            homeVideo.play().catch(() => {});
+            
+            // Coba play audio sebentar untuk unlock
+            tabAudio.play().then(() => {
+                tabAudio.pause();
+                tabAudio.currentTime = 0;
+            }).catch(() => {});
+            
+            userInteracted = true;
+        }
     }
 
     function openTab(tab) {
+        // Unlock media saat user klik tab (interaksi pertama)
+        unlockMedia();
+
         // Sembunyikan semua tab
         document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
         document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
@@ -153,30 +136,31 @@
         document.getElementById(tab).style.display = 'block';
         event.currentTarget.classList.add('active');
 
-        // Kontrol video Home
+        // Kontrol video home
         const isHome = tab === 'Home';
         document.getElementById('homeVideo').style.display = isHome ? 'block' : 'none';
 
-        // Jika bukan Home dan audio sudah diaktifkan, putar ulang setiap kali
-        if (!isHome) {
-            tabAudio.pause();
-            tabAudio.currentTime = 0;
+        if (isHome) {
+            // Pastikan video jalan dengan suara dan loop smooth
+            homeVideo.muted = false;
+            homeVideo.play();
+        } else {
+            // Stop video saat pindah tab
+            homeVideo.pause();
 
-            if (audioEnabled) {
-                tabAudio.play().catch(() => {
-                    // Jika belum diaktifkan, tampilkan tombol
-                    enableBtn.style.display = 'block';
-                });
-            } else {
-                // Tampilkan tombol kalau audio belum diizinkan
-                enableBtn.style.display = 'block';
-            }
+            // Putar audio narasi dari awal setiap kali buka tab lain
+            tabAudio.currentTime = 0;
+            tabAudio.play().catch(() => {
+                console.log("Audio narasi diblokir sementara");
+            });
         }
     }
 
-    // Otomatis buka Home saat load
+    // Saat halaman load: buka Home, video autoplay muted dulu (biar aman)
     window.onload = () => {
-        document.querySelector('.menu-btn.pink').click();
+        homeVideo.muted = true; // Mulai muted biar autoplay pasti jalan
+        homeVideo.play();
+        document.querySelector('.menu-btn.pink').click(); // Otomatis aktifkan tab Home
     };
 </script>
 
