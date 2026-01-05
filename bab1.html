@@ -55,7 +55,7 @@
     </div>
 </div>
 
-<!-- HOME VIDEO - PLAY SEKALI SAJA SETIAP MASUK TAB HOME -->
+<!-- HOME VIDEO - PLAY SEKALI SAJA DENGAN SUARA -->
 <div class="video-container" id="homeVideo">
     <video id="homeVid" playsinline>
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
@@ -63,7 +63,7 @@
     </video>
 </div>
 
-<!-- AUDIO NARASI UNTUK TAB LAIN -->
+<!-- AUDIO NARASI - AUTOPLAY SETIAP PINDAH TAB LAIN -->
 <audio id="tabAudio" preload="auto">
     <source src="https://airnetcso.github.io/hrd/audio/b1.mp3" type="audio/mpeg">
 </audio>
@@ -106,15 +106,15 @@
     const homeVideo = document.getElementById('homeVid');
     const tabAudio = document.getElementById('tabAudio');
     let userInteracted = false;
-    let homeVideoPlayed = false; // Track apakah video sudah diputar di sesi ini
+    let homeVideoPlayed = false;
 
-    // Unlock media setelah interaksi user (klik tab)
+    // Unlock audio & video dengan suara setelah klik tab pertama
     function unlockMedia() {
         if (!userInteracted) {
-            // Coba unlock audio/video dengan suara
+            // Unlock video suara
             homeVideo.muted = false;
-            homeVideo.play().catch(() => {});
-
+            
+            // Unlock audio narasi dengan trik play-pause
             tabAudio.play().then(() => {
                 tabAudio.pause();
                 tabAudio.currentTime = 0;
@@ -125,48 +125,49 @@
     }
 
     function openTab(tab) {
-        unlockMedia();
+        unlockMedia(); // Pastikan media di-unlock setiap klik tab
 
-        // Sembunyikan semua tab content
+        // Hide all tabs
         document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
         document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
 
-        // Tampilkan tab yang dipilih
+        // Show selected tab
         document.getElementById(tab).style.display = 'block';
         event.currentTarget.classList.add('active');
 
         const isHome = tab === 'Home';
 
-        // Kontrol video
+        // Kontrol video container
         document.getElementById('homeVideo').style.display = isHome ? 'block' : 'none';
 
         if (isHome) {
-            // Hanya putar video SEKALI ketika masuk/kembali ke Home
+            // Putar video hanya sekali saat masuk/kembali ke Home
             if (!homeVideoPlayed) {
-                homeVideo.muted = false;
                 homeVideo.currentTime = 0;
                 homeVideo.play().catch(() => {
-                    console.log("Video autoplay diblokir");
+                    console.log("Video autoplay gagal (mungkin perlu interaksi lagi)");
                 });
-                homeVideoPlayed = true; // Tandai sudah diputar
+                homeVideoPlayed = true;
             }
         } else {
-            // Stop video kalau pindah tab
+            // Stop video saat pindah ke tab lain
             homeVideo.pause();
 
-            // Putar audio narasi dari awal setiap kali buka tab lain
+            // AUTOPLAY AUDIO NARASI DARI AWAL SETIAP PINDAH TAB
             tabAudio.currentTime = 0;
-            tabAudio.play().catch(() => {
-                console.log("Audio narasi diblokir sementara");
+            tabAudio.play().catch((e) => {
+                console.log("Audio narasi diblokir:", e);
             });
         }
     }
 
-    // Saat load halaman: buka Home, tapi video belum play (tunggu interaksi)
+    // Saat halaman load
     window.onload = () => {
-        document.querySelector('.menu-btn.pink').click();
-        // Reset flag kalau reload halaman
+        // Reset flag kalau reload
         homeVideoPlayed = false;
+        
+        // Otomatis buka tab Home (video belum play, tunggu klik)
+        document.querySelector('.menu-btn.pink').click();
     };
 </script>
 
