@@ -37,6 +37,24 @@
         .header-dialog{background:#9933cc}
         .header-culture{background:#33cc99}
         .header-latihan{background:#996633}
+
+        /* Tombol aktifkan suara */
+        #enableAudioBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff66aa;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            font-size: 1em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            display: none;
+        }
+        #enableAudioBtn:hover { background: #ff4499; }
     </style>
 </head>
 
@@ -55,7 +73,7 @@
     </div>
 </div>
 
-<!-- HOME VIDEO (AUTOPLAY LOOP) -->
+<!-- HOME VIDEO -->
 <div class="video-container" id="homeVideo">
     <video autoplay muted loop playsinline>
         <source src="https://raw.githubusercontent.com/airnetcso/hrd/main/home/1-1.mp4" type="video/mp4">
@@ -63,16 +81,18 @@
     </video>
 </div>
 
-<!-- AUDIO UNTUK TAB LAIN -->
+<!-- AUDIO TAB -->
 <audio id="tabAudio" preload="auto">
     <source src="https://airnetcso.github.io/hrd/audio/b1.mp3" type="audio/mpeg">
     Browser Anda tidak mendukung audio.
 </audio>
 
+<!-- Tombol Aktifkan Suara -->
+<button id="enableAudioBtn" onclick="enableAudio()">Aktifkan Suara 🔊</button>
+
 <div class="container">
 
     <div id="Home" class="tabcontent">
-        <!-- Kosong atau bisa diisi intro singkat kalau mau -->
         <p>Selamat datang di Bab 1: Perkenalan Diri (자기소개)</p>
     </div>
 
@@ -109,23 +129,22 @@
 
 <script>
     const tabAudio = document.getElementById('tabAudio');
-    let audioUnlocked = false;
+    const enableBtn = document.getElementById('enableAudioBtn');
+    let audioEnabled = false;
 
-    // Unlock permission audio (diperlukan browser modern)
-    function unlockAudio() {
-        if (!audioUnlocked) {
-            tabAudio.play().then(() => {
-                tabAudio.pause();
-                tabAudio.currentTime = 0;
-                audioUnlocked = true;
-            }).catch(() => {});
-        }
+    // Fungsi aktifkan audio saat user klik tombol
+    function enableAudio() {
+        tabAudio.play().then(() => {
+            tabAudio.pause();
+            tabAudio.currentTime = 0;
+            audioEnabled = true;
+            enableBtn.style.display = 'none'; // Sembunyikan tombol setelah aktif
+        }).catch((err) => {
+            console.log("Gagal aktifkan audio:", err);
+        });
     }
 
     function openTab(tab) {
-        // Unlock audio kalau belum pernah
-        unlockAudio();
-
         // Sembunyikan semua tab
         document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
         document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
@@ -138,18 +157,24 @@
         const isHome = tab === 'Home';
         document.getElementById('homeVideo').style.display = isHome ? 'block' : 'none';
 
-        // Reset dan putar audio ULANG setiap kali buka tab selain Home
-        tabAudio.pause();
-        tabAudio.currentTime = 0;
+        // Jika bukan Home dan audio sudah diaktifkan, putar ulang setiap kali
+        if (!isHome) {
+            tabAudio.pause();
+            tabAudio.currentTime = 0;
 
-        if (!isHome && audioUnlocked) {
-            tabAudio.play().catch(() => {
-                console.log("Audio gagal diputar (mungkin browser blokir)");
-            });
+            if (audioEnabled) {
+                tabAudio.play().catch(() => {
+                    // Jika belum diaktifkan, tampilkan tombol
+                    enableBtn.style.display = 'block';
+                });
+            } else {
+                // Tampilkan tombol kalau audio belum diizinkan
+                enableBtn.style.display = 'block';
+            }
         }
     }
 
-    // Otomatis buka tab Home saat halaman load
+    // Otomatis buka Home saat load
     window.onload = () => {
         document.querySelector('.menu-btn.pink').click();
     };
