@@ -7,7 +7,7 @@
     <style>
         body { font-family: 'Arial', sans-serif; background: #fff0f5; margin: 0; padding: 0; color: #333; }
         header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); padding: 15px 20px; display: flex; align-items: center; justify-content: flex-start; }
-        .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; } /* Hanya angka kecil */
+        .chapter-number { font-size: 1.8em; font-weight: bold; color: white; margin: 0; }
         .menu-container { background: #fff0f5; padding: 15px 10px; overflow-x: auto; white-space: nowrap; }
         .menu-buttons { display: inline-flex; gap: 10px; }
         .menu-btn { padding: 8px 12px; font-size: 0.85em; color: white; min-width: 100px; text-align: center; cursor: pointer; }
@@ -82,27 +82,38 @@
             <!-- Bendera negara & pekerjaan -->
             <img src="https://flagpedia.net/data/flags/w580/kr.webp" alt="한국">
             <img src="https://flagpedia.net/data/flags/w580/np.webp" alt="네팔">
-            <!-- Tambah semua -->
+            <!-- Tambah semua bendera & kartun pekerjaan -->
         </div>
     </div>
 
-    <!-- Tab lain mirip struktur -->
+    <!-- Tab Grammar, Dialog, Culture, Latihan mirip struktur -->
 </div>
 
 <script>
 function openTab(tabName) {
+    // Hide all tabcontent
     document.querySelectorAll('.tabcontent').forEach(t => t.style.display = 'none');
+    
+    // Remove active from all buttons
     document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+    
+    // Show selected tab
     document.getElementById(tabName).style.display = 'block';
+    
+    // Add active to clicked button
     event.currentTarget.classList.add('active');
     
+    // Show/hide video & learning goals
     document.getElementById('homeVideo').style.display = (tabName === 'Home') ? 'block' : 'none';
     document.getElementById('learningGoals').style.display = (tabName === 'Home') ? 'block' : 'none';
     
-    if (tabName === 'Home') document.querySelector('video').play();
+    // Play video if Home
+    if (tabName === 'Home') {
+        document.querySelector('video').play();
+    }
 }
 
-// Langsung buka Home saat load
+// Langsung buka Home saat page load
 window.onload = function() {
     openTab('Home');
     document.querySelector('.menu-btn.pink').classList.add('active');
