@@ -5,96 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPS-TOPIK Digital 2024 - Bab 1-30</title>
     <style>
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: linear-gradient(to bottom, #fff0f5, #ffe6f0); 
-            margin: 0; 
-            padding: 0; 
-            color: #333; 
-            min-height: 100vh;
-        }
-        header { 
-            background: linear-gradient(to bottom, #ff99cc, #ff66aa); 
-            text-align: center; 
-            padding: 60px 20px; 
-            color: white;
-        }
-        h1 { 
-            font-size: 2.8em; 
-            margin: 0 0 10px; 
-        }
-        .subtitle { 
-            font-size: 1.4em; 
-            margin: 0; 
-            opacity: 0.9; 
-        }
-        .container { 
-            max-width: 1200px; 
-            margin: 40px auto; 
-            padding: 20px; 
-        }
-        .bab-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-            gap: 25px; 
-        }
-        .bab-card { 
-            background: white; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
-            transition: transform 0.3s, box-shadow 0.3s; 
-            text-decoration: none; 
-            color: #333; 
-            display: block;
-        }
-        .bab-card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
-        }
-        .bab-number { 
-            background: #ff66aa; 
-            color: white; 
-            font-size: 3em; 
-            font-weight: bold; 
-            text-align: center; 
-            padding: 20px 0; 
-        }
-        .bab-title { 
-            text-align: center; 
-            padding: 20px; 
-            font-size: 1.3em; 
-        }
-        .bab-title-kr { 
-            font-weight: bold; 
-            color: #ff3388; 
-        }
-        .bab-title-id { 
-            font-size: 0.9em; 
-            color: #666; 
-            margin-top: 8px; 
-        }
-        footer { 
-            text-align: center; 
-            padding: 40px; 
-            color: #888; 
-            font-size: 0.9em; 
-        }
-        @media (max-width: 768px) { 
-            h1 { font-size: 2.2em; } 
-            .subtitle { font-size: 1.2em; } 
-            .bab-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
-        @media (max-width: 480px) { 
-            .bab-grid { grid-template-columns: 1fr; } 
-        }
+        body { font-family: 'Arial', sans-serif; background: linear-gradient(to bottom, #fff0f5, #ffe6f0); margin: 0; padding: 0; color: #333; }
+        header { background: linear-gradient(to bottom, #ff99cc, #ff66aa); text-align: center; padding: 60px 20px; color: white; }
+        h1 { font-size: 2.8em; margin: 0 0 10px; }
+        .subtitle { font-size: 1.4em; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 20px; }
+        .bab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .bab-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s; text-decoration: none; color: #333; }
+        .bab-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+        .bab-number { background: #ff66aa; color: white; font-size: 3em; font-weight: bold; text-align: center; padding: 20px 0; }
+        .bab-title { text-align: center; padding: 20px; font-size: 1.3em; }
+        .bab-title-kr { font-weight: bold; color: #ff3388; }
+        .bab-title-id { font-size: 0.9em; color: #666; margin-top: 8px; }
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9em; }
+        @media (max-width: 768px) { h1 { font-size: 2.2em; } .bab-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .bab-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>EPS-TOPIK<br>Bahasa Korea Digital</h1>
-    <p class="subtitle">2024 Edition • Bab 1–30</p>
+    <h1>EPS-TOPIK Digital</h1>
+    <p class="subtitle">Bahasa Korea Interaktif • Bab 1–30</p>
 </header>
 
 <div class="container">
@@ -108,55 +40,14 @@
             </div>
         </a>
 
-        <!-- Bab 2 sampai 30 (contoh, nanti tambah semua) -->
-        <a href="bab2.html" class="bab-card">
-            <div class="bab-number">2</div>
-            <div class="bab-title">
-                <div class="bab-title-kr">제목 한국어</div>
-                <div class="bab-title-id">Judul Indonesia</div>
-            </div>
-        </a>
-
-        <!-- Ulangi sampai Bab 30 -->
-        <!-- Gue kasih contoh sampai Bab 6, lo tambahin sisanya -->
-        <a href="bab3.html" class="bab-card">
-            <div class="bab-number">3</div>
-            <div class="bab-title">
-                <div class="bab-title-kr">제목</div>
-                <div class="bab-title-id">Judul</div>
-            </div>
-        </a>
-
-        <a href="bab4.html" class="bab-card">
-            <div class="bab-number">4</div>
-            <div class="bab-title">
-                <div class="bab-title-kr">제목</div>
-                <div class="bab-title-id">Judul</div>
-            </div>
-        </a>
-
-        <a href="bab5.html" class="bab-card">
-            <div class="bab-number">5</div>
-            <div class="bab-title">
-                <div class="bab-title-kr">제목</div>
-                <div class="bab-title-id">Judul</div>
-            </div>
-        </a>
-
-        <a href="bab6.html" class="bab-card">
-            <div class="bab-number">6</div>
-            <div class="bab-title">
-                <div class="bab-title-kr">제목</div>
-                <div class="bab-title-id">Judul</div>
-            </div>
-        </a>
-
-        <!-- ... sampai bab30.html -->
+        <!-- Bab 2-30 (contoh, lo isi judulnya nanti) -->
+        <!-- <a href="bab2.html" class="bab-card"> ... </a> -->
+        <!-- Sampai bab 30 -->
     </div>
 </div>
 
 <footer>
-    EPS-TOPIK Digital Interaktif • Dibuat dengan ❤️ untuk pekerja Indonesia di Korea
+    EPS-TOPIK Digital 2024 • Dibuat untuk pekerja Indonesia di Korea ❤️
 </footer>
 
 </body>
